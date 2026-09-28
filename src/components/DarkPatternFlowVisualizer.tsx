@@ -14,6 +14,7 @@ import { useLanguage } from '@/lib/i18n';
 interface FlowVisualizerProps {
   serviceName: string;
   patternType: DarkPatternType;
+  difficultyRating?: number;
   averageMinutes: number;
   className?: string;
 }
