@@ -116,3 +116,28 @@ All notable architectural and technical implementations of the UnTrap platform a
   - Added an iOS-style glassmorphic language switcher to `Header.tsx` allowing one-tap switching between Arabic and English.
 - **Bilingual Statutory Notice Generator**:
   - Enhanced `src/lib/legal-templates.ts` to output formal Arabic legal notices citing California CARL § 17600, ROSCA (15 U.S.C. § 8401), and EFTA Reg E with official legal Arabic phrasing alongside English statutory references.
+
+---
+
+## [Refinements: Legal Neutrality, Difficulty Breakdown, SEO & Service Schema] - 2026-09-28
+
+### 1. Legal Wording & Disclaimer
+- **Neutral Terminology**: Removed all definitive assertions such as "ملزم قانونياً" (legally binding) or claims of forcing companies. Replaced with accurate, professional phrasing: "Cancellation Notice Generator" / "مُولّد إخطار الإلغاء".
+- **Statutory Notice Disclaimer**: Integrated clear, prominent legal disclaimers stating that the tool provides standardized cancellation templates based on consumer protection statutes (such as California CARL § 17600 and ROSCA) and does not constitute formal legal advice.
+
+### 2. Objective Cancellation Difficulty
+- **Neutral Phrasing**: Replaced "مستوى الفخ" (Trap Level) with "Cancellation Difficulty" / "صعوبة الإلغاء".
+- **Granular Evaluation Reasons**: Added specific, transparent rationale for difficulty ratings (e.g., "Phone cancellation required", "In-person appearance or certified mail required", "Hidden cancel button / submerged UI", "Notice period required", "Multi-screen retention survey").
+
+### 3. Service SEO & Pre-rendered Static Pages
+- **Dedicated Independent Pages**: Confirmed static generation for all 50+ service pages (e.g. `/cancel/netflix`, `/cancel/adobe`, `/cancel/planet-fitness`) via Next.js `generateStaticParams`.
+- **Comprehensive Structure**: Each page displays the service name, cancellation procedure, step-by-step instructions, direct bypass link, prerequisites/requirements, and last verification timestamp.
+- **SSR Indexability**: Added crawlable fallback in `/cancel` ensuring all 50+ service guides are fully crawlable by search engines even without JavaScript execution.
+
+### 4. Last Verified & Outdated Information Reporting
+- Added `lastVerified` timestamp to all 50 services.
+- Added a discreet "Report outdated information" / "الإبلاغ عن معلومات قديمة" action linking directly to the reporting interface.
+
+### 5. Structured Data & Schema Optimization
+- Enriched `services.json` and `src/lib/types.ts` with structured fields: `requirements`, `difficultyReason`, and `lastVerified` while strictly preserving all existing fields and UI styling.
+- Streamlined mobile search padding to ensure maximum comfort and visibility on phone screens without altering the branding or visual hierarchy.

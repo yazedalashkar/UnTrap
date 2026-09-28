@@ -172,7 +172,7 @@ const ARABIC_NAME_MAP: Record<string, string[]> = {
           autoFocus={autoFocus}
           placeholder={activePlaceholder}
           className={`h-14 w-full rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-zinc-900/60 ${
-            lang === 'ar' ? 'pr-12 pl-24 text-right' : 'pl-12 pr-24 text-left'
+            lang === 'ar' ? 'pr-11 pl-11 sm:pl-20 text-right' : 'pl-11 pr-11 sm:pr-20 text-left'
           } text-base text-foreground shadow-xl shadow-black/[0.03] dark:shadow-black/30 backdrop-blur-2xl transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] placeholder:text-muted-foreground focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-500/15 focus:shadow-2xl focus:shadow-red-500/10`}
         />
 

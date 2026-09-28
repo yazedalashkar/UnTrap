@@ -15,7 +15,7 @@
       "Decline any downgrade or ad-tier retention offers without clicking alternative buttons."
     ],
     "retentionOfferWorkaround": "When presented with 'Switch to Standard with ads for $6.99', click the smaller gray 'Finish Cancellation' button located at the lower fold.",
-    "legalStatuteReference": "California Business and Professions Code \u00a7 17602 (Immediate Online Cancellation Mandate)",
+    "legalStatuteReference": "California Business and Professions Code § 17602 (Immediate Online Cancellation Mandate)",
     "averageCancellationTimeMinutes": 1,
     "phoneContactFallback": "1-844-505-2993",
     "faqs": [
@@ -27,7 +27,13 @@
         "question": "Does deleting the profile cancel the subscription?",
         "answer": "No. Profile deletion does not stop recurring billing charges."
       }
-    ]
+    ],
+    "difficultyReason": "Standard multi-step online survey",
+    "requirements": [
+      "Account email and password",
+      "Access to registered account profile"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "spotify",
@@ -52,7 +58,13 @@
         "question": "Will I lose my saved playlists if I cancel Premium?",
         "answer": "No, your playlists, saved tracks, and followers remain intact on the free ad-supported tier."
       }
-    ]
+    ],
+    "difficultyReason": "Standard multi-step online survey",
+    "requirements": [
+      "Account email and password",
+      "Access to registered account profile"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "hulu",
@@ -70,14 +82,20 @@
       "Select any cancellation reason and submit confirmation."
     ],
     "retentionOfferWorkaround": "Hulu default-highlights 'Pause Subscription for 12 weeks' in primary green. Click the unstyled 'No, Cancel Subscription' link below.",
-    "legalStatuteReference": "California Automatic Renewal Law (CARL) \u00a7 17600",
+    "legalStatuteReference": "California Automatic Renewal Law (CARL) § 17600",
     "averageCancellationTimeMinutes": 2,
     "faqs": [
       {
         "question": "Does pausing stop charges forever?",
         "answer": "No, paused subscriptions auto-resume and charge your card after the selected pause period."
       }
-    ]
+    ],
+    "difficultyReason": "Notice period required / forced cooldown delay",
+    "requirements": [
+      "Account email and password",
+      "Access to registered account profile"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "disney-plus",
@@ -95,8 +113,14 @@
       "Confirm cancellation on the final review banner."
     ],
     "retentionOfferWorkaround": "Ignore discounted bundle upsells (Hulu/Max add-ons) and verify the final cancellation confirmation email timestamp.",
-    "legalStatuteReference": "Restore Online Shoppers' Confidence Act (ROSCA) 15 U.S.C. \u00a7 8403",
-    "averageCancellationTimeMinutes": 2
+    "legalStatuteReference": "Restore Online Shoppers' Confidence Act (ROSCA) 15 U.S.C. § 8403",
+    "averageCancellationTimeMinutes": 2,
+    "difficultyReason": "Standard multi-step online survey",
+    "requirements": [
+      "Account email and password",
+      "Access to registered account profile"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "max",
@@ -114,8 +138,14 @@
       "Select 'Continue Cancellation'."
     ],
     "retentionOfferWorkaround": "The cancellation confirmation button is rendered in low-contrast secondary slate while 'Keep Plan' is vivid purple.",
-    "legalStatuteReference": "CARL \u00a7 17602 & FTC Section 5 Unfair Methods of Competition",
-    "averageCancellationTimeMinutes": 2
+    "legalStatuteReference": "CARL § 17602 & FTC Section 5 Unfair Methods of Competition",
+    "averageCancellationTimeMinutes": 2,
+    "difficultyReason": "Hidden cancel button / submerged UI",
+    "requirements": [
+      "Account email and password",
+      "Access to registered account profile"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "apple-tv-plus",
@@ -133,8 +163,14 @@
       "Confirm when system modal prompts."
     ],
     "retentionOfferWorkaround": "On non-Apple devices, web cancellation requires navigating Apple ID account security challenges before exposing subscription controls.",
-    "legalStatuteReference": "CARL \u00a7 17600(b) Multi-platform parity provision",
-    "averageCancellationTimeMinutes": 3
+    "legalStatuteReference": "CARL § 17600(b) Multi-platform parity provision",
+    "averageCancellationTimeMinutes": 3,
+    "difficultyReason": "Hidden cancel button / submerged UI",
+    "requirements": [
+      "Account email and password",
+      "Access to registered account profile"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "paramount-plus",
@@ -153,7 +189,13 @@
     ],
     "retentionOfferWorkaround": "Paramount+ frequently offers 1-2 free months. If you wish to permanently terminate, decline the offer twice consecutively.",
     "legalStatuteReference": "FTC Negative Option Rule (16 CFR Part 425)",
-    "averageCancellationTimeMinutes": 3
+    "averageCancellationTimeMinutes": 3,
+    "difficultyReason": "Notice period required / forced cooldown delay",
+    "requirements": [
+      "Account email and password",
+      "Access to registered account profile"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "youtube-premium",
@@ -171,8 +213,14 @@
       "Confirm reason and final termination."
     ],
     "retentionOfferWorkaround": "YouTube prompts 'Pause for up to 6 months' with heavy styling. Select 'Continue to Cancel' link directly.",
-    "legalStatuteReference": "ROSCA 15 U.S.C. \u00a7 8401",
-    "averageCancellationTimeMinutes": 2
+    "legalStatuteReference": "ROSCA 15 U.S.C. § 8401",
+    "averageCancellationTimeMinutes": 2,
+    "difficultyReason": "Standard multi-step online survey",
+    "requirements": [
+      "Account email and password",
+      "Access to registered account profile"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "peacock",
@@ -190,8 +238,14 @@
       "Confirm through retention warning screens."
     ],
     "retentionOfferWorkaround": "Bypass the sports and live television retention warnings by clicking 'Continue to Cancel' at the page base.",
-    "legalStatuteReference": "CARL \u00a7 17602",
-    "averageCancellationTimeMinutes": 2
+    "legalStatuteReference": "CARL § 17602",
+    "averageCancellationTimeMinutes": 2,
+    "difficultyReason": "Standard multi-step online survey",
+    "requirements": [
+      "Account email and password",
+      "Access to registered account profile"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "amazon-prime-video",
@@ -217,7 +271,13 @@
         "question": "Can I get a refund for unused Prime days?",
         "answer": "Yes, if you have not used Prime shipping or video benefits during the current billing period, Amazon issues an automated prorated refund."
       }
-    ]
+    ],
+    "difficultyReason": "Multi-step retention maze & penalty fees",
+    "requirements": [
+      "Account email and password",
+      "Access to registered account profile"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "planet-fitness",
@@ -235,7 +295,7 @@
       "Alternatively, hand-deliver the notice in person and demand a signed receipt timestamp."
     ],
     "retentionOfferWorkaround": "If residing in California or New York, invoke state auto-renewal law amendments requiring online cancellation for agreements initiated online.",
-    "legalStatuteReference": "California Business and Professions Code \u00a7 17602 & New York Gen. Bus. Law \u00a7 527-a",
+    "legalStatuteReference": "California Business and Professions Code § 17602 & New York Gen. Bus. Law § 527-a",
     "averageCancellationTimeMinutes": 15,
     "phoneContactFallback": "844-880-7180",
     "faqs": [
@@ -243,7 +303,14 @@
         "question": "Can I cancel Planet Fitness over the phone?",
         "answer": "Standard franchise policies prohibit phone cancellations. You must use certified mail or deliver an in-person written notice."
       }
-    ]
+    ],
+    "difficultyReason": "In-person appearance or certified mail required",
+    "requirements": [
+      "Member ID or barcode number",
+      "Home club branch location",
+      "Government-issued ID or registered address"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "equinox",
@@ -261,9 +328,16 @@
       "Request written confirmation of final billing cycle date."
     ],
     "retentionOfferWorkaround": "Managers will enforce 30-45 day advance notice and demand in-person exit interviews. The UnTrap Legal Notice overrides oral interview mandates.",
-    "legalStatuteReference": "CARL \u00a7 17602 & Health Club Services Act",
+    "legalStatuteReference": "CARL § 17602 & Health Club Services Act",
     "averageCancellationTimeMinutes": 20,
-    "phoneContactFallback": "866-332-6549"
+    "phoneContactFallback": "866-332-6549",
+    "difficultyReason": "Notice period required / forced cooldown delay",
+    "requirements": [
+      "Member ID or barcode number",
+      "Home club branch location",
+      "Government-issued ID or registered address"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "la-fitness",
@@ -281,9 +355,16 @@
       "Or deliver to Operations Manager at your home club between 9 AM and 5 PM Mon-Fri."
     ],
     "retentionOfferWorkaround": "Portal blocks one-click submission by forcing users to physically print paper slips. Use UnTrap PDF demand to execute compliant legal notice.",
-    "legalStatuteReference": "California Civil Code \u00a7 1812.85",
+    "legalStatuteReference": "California Civil Code § 1812.85",
     "averageCancellationTimeMinutes": 10,
-    "phoneContactFallback": "949-255-7200"
+    "phoneContactFallback": "949-255-7200",
+    "difficultyReason": "In-person appearance or certified mail required",
+    "requirements": [
+      "Member ID or barcode number",
+      "Home club branch location",
+      "Government-issued ID or registered address"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "anytime-fitness",
@@ -301,8 +382,15 @@
       "Block card billing tokens if unacknowledged after 7 business days."
     ],
     "retentionOfferWorkaround": "Avoid high cancellation fee claims by verifying whether your original contract period has converted into month-to-month auto-renewal.",
-    "legalStatuteReference": "ROSCA 15 U.S.C. \u00a7 8403 & State Health Club Statutes",
-    "averageCancellationTimeMinutes": 15
+    "legalStatuteReference": "ROSCA 15 U.S.C. § 8403 & State Health Club Statutes",
+    "averageCancellationTimeMinutes": 15,
+    "difficultyReason": "In-person appearance or certified mail required",
+    "requirements": [
+      "Member ID or barcode number",
+      "Home club branch location",
+      "Government-issued ID or registered address"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "golds-gym",
@@ -320,8 +408,15 @@
       "Request confirmation number in writing."
     ],
     "retentionOfferWorkaround": "Third-party billing processor (ABC Fitness) often denies receiving oral cancellations. A signed certified letter eliminates plausible deniability.",
-    "legalStatuteReference": "CARL \u00a7 17600 & Electronic Fund Transfer Act (EFTA)",
-    "averageCancellationTimeMinutes": 12
+    "legalStatuteReference": "CARL § 17600 & Electronic Fund Transfer Act (EFTA)",
+    "averageCancellationTimeMinutes": 12,
+    "difficultyReason": "In-person appearance or certified mail required",
+    "requirements": [
+      "Member ID or barcode number",
+      "Home club branch location",
+      "Government-issued ID or registered address"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "crunch-fitness",
@@ -341,7 +436,14 @@
     "retentionOfferWorkaround": "Crunch signature clubs allow web submissions; franchised locations often demand certified mail. Use our dual digital/mail demand generator.",
     "legalStatuteReference": "FTC Negative Option Rule (16 CFR Part 425)",
     "averageCancellationTimeMinutes": 10,
-    "phoneContactFallback": "800-547-1744"
+    "phoneContactFallback": "800-547-1744",
+    "difficultyReason": "Notice period required / forced cooldown delay",
+    "requirements": [
+      "Member ID or barcode number",
+      "Home club branch location",
+      "Government-issued ID or registered address"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "f45-training",
@@ -359,8 +461,15 @@
       "Demand confirmation of billing freeze."
     ],
     "retentionOfferWorkaround": "Studios enforce strict 30-day auto-draft cutoff dates. Serving statutory notice locks the timestamp regardless of delayed studio processing.",
-    "legalStatuteReference": "CARL \u00a7 17602",
-    "averageCancellationTimeMinutes": 8
+    "legalStatuteReference": "CARL § 17602",
+    "averageCancellationTimeMinutes": 8,
+    "difficultyReason": "Notice period required / forced cooldown delay",
+    "requirements": [
+      "Member ID or barcode number",
+      "Home club branch location",
+      "Government-issued ID or registered address"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "orangetheory-fitness",
@@ -378,8 +487,15 @@
       "Track the final billed cycle to prevent unauthorized subsequent drafts."
     ],
     "retentionOfferWorkaround": "If unable to visit in person, email the studio manager with an executed UnTrap PDF notice and request electronic confirmation under UETA.",
-    "legalStatuteReference": "Uniform Electronic Transactions Act (UETA) & CARL \u00a7 17602",
-    "averageCancellationTimeMinutes": 10
+    "legalStatuteReference": "Uniform Electronic Transactions Act (UETA) & CARL § 17602",
+    "averageCancellationTimeMinutes": 10,
+    "difficultyReason": "In-person appearance or certified mail required",
+    "requirements": [
+      "Member ID or barcode number",
+      "Home club branch location",
+      "Government-issued ID or registered address"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "24-hour-fitness",
@@ -397,9 +513,16 @@
       "Save confirmation code immediately."
     ],
     "retentionOfferWorkaround": "California members are granted direct web cancellation by law; out-of-state users might be routed to club calls. Use California billing address or statutory notice.",
-    "legalStatuteReference": "California Business and Professions Code \u00a7 17602",
+    "legalStatuteReference": "California Business and Professions Code § 17602",
     "averageCancellationTimeMinutes": 5,
-    "phoneContactFallback": "888-243-5002"
+    "phoneContactFallback": "888-243-5002",
+    "difficultyReason": "Notice period required / forced cooldown delay",
+    "requirements": [
+      "Member ID or barcode number",
+      "Home club branch location",
+      "Government-issued ID or registered address"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "lifetime-fitness",
@@ -417,9 +540,16 @@
       "Retain written verification."
     ],
     "retentionOfferWorkaround": "Life Time requires notice by the 10th or 15th to prevent next month billing. Deliver UnTrap legal demand to establish strict date stamping.",
-    "legalStatuteReference": "ROSCA 15 U.S.C. \u00a7 8403",
+    "legalStatuteReference": "ROSCA 15 U.S.C. § 8403",
     "averageCancellationTimeMinutes": 10,
-    "phoneContactFallback": "888-430-6432"
+    "phoneContactFallback": "888-430-6432",
+    "difficultyReason": "In-person appearance or certified mail required",
+    "requirements": [
+      "Member ID or barcode number",
+      "Home club branch location",
+      "Government-issued ID or registered address"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "adobe-creative-cloud",
@@ -446,7 +576,14 @@
         "question": "Is the Adobe fee switch loophole legal?",
         "answer": "Yes, changing your plan creates a new consumer contract subject to a mandatory 14-day statutory no-penalty cancellation window."
       }
-    ]
+    ],
+    "difficultyReason": "Multi-step retention maze & penalty fees",
+    "requirements": [
+      "Account administrator credentials",
+      "Primary account billing email",
+      "Export of user project files prior to license expiration"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "canva",
@@ -464,8 +601,15 @@
       "Confirm cancellation."
     ],
     "retentionOfferWorkaround": "Canva warns that team brand kits and premium stock images will become locked. Click 'Continue to cancel' at lower left.",
-    "legalStatuteReference": "CARL \u00a7 17602",
-    "averageCancellationTimeMinutes": 2
+    "legalStatuteReference": "CARL § 17602",
+    "averageCancellationTimeMinutes": 2,
+    "difficultyReason": "Standard multi-step online survey",
+    "requirements": [
+      "Account administrator credentials",
+      "Primary account billing email",
+      "Export of user project files prior to license expiration"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "microsoft-365",
@@ -483,8 +627,15 @@
       "Confirm choice on confirmation dialogue."
     ],
     "retentionOfferWorkaround": "Microsoft separates 'Cancel now with refund' and 'Turn off recurring billing' depending on whether you are in your initial 30 days.",
-    "legalStatuteReference": "ROSCA 15 U.S.C. \u00a7 8403",
-    "averageCancellationTimeMinutes": 3
+    "legalStatuteReference": "ROSCA 15 U.S.C. § 8403",
+    "averageCancellationTimeMinutes": 3,
+    "difficultyReason": "Hidden cancel button / submerged UI",
+    "requirements": [
+      "Account administrator credentials",
+      "Primary account billing email",
+      "Export of user project files prior to license expiration"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "slack",
@@ -502,8 +653,15 @@
       "Verify end of billing period date."
     ],
     "retentionOfferWorkaround": "Must be executed by Workspace Primary Owner; admins without billing privileges are hidden from cancellation switches.",
-    "legalStatuteReference": "CARL \u00a7 17600",
-    "averageCancellationTimeMinutes": 2
+    "legalStatuteReference": "CARL § 17600",
+    "averageCancellationTimeMinutes": 2,
+    "difficultyReason": "Hidden cancel button / submerged UI",
+    "requirements": [
+      "Account administrator credentials",
+      "Primary account billing email",
+      "Export of user project files prior to license expiration"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "zoom",
@@ -522,7 +680,14 @@
     ],
     "retentionOfferWorkaround": "Zoom presents 20-40% discount vouchers upon cancellation attempt. Decline to finalize termination.",
     "legalStatuteReference": "FTC Negative Option Rule (16 CFR Part 425)",
-    "averageCancellationTimeMinutes": 2
+    "averageCancellationTimeMinutes": 2,
+    "difficultyReason": "Standard multi-step online survey",
+    "requirements": [
+      "Account administrator credentials",
+      "Primary account billing email",
+      "Export of user project files prior to license expiration"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "dropbox",
@@ -540,8 +705,15 @@
       "Confirm final downgrade to Basic."
     ],
     "retentionOfferWorkaround": "Dropbox prompts with 'Keep my plan' in bold blue and 'Continue with downgrade' as ghost button. Choose the ghost link.",
-    "legalStatuteReference": "CARL \u00a7 17602",
-    "averageCancellationTimeMinutes": 3
+    "legalStatuteReference": "CARL § 17602",
+    "averageCancellationTimeMinutes": 3,
+    "difficultyReason": "Multi-screen retention survey",
+    "requirements": [
+      "Account administrator credentials",
+      "Primary account billing email",
+      "Export of user project files prior to license expiration"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "github",
@@ -559,8 +731,15 @@
       "Type account confirmation if requested."
     ],
     "retentionOfferWorkaround": "Minimal dark patterns; ensure seats are de-allocated in org billing if managing team licenses.",
-    "legalStatuteReference": "CARL \u00a7 17600",
-    "averageCancellationTimeMinutes": 1
+    "legalStatuteReference": "CARL § 17600",
+    "averageCancellationTimeMinutes": 1,
+    "difficultyReason": "Hidden cancel button / submerged UI",
+    "requirements": [
+      "Account administrator credentials",
+      "Primary account billing email",
+      "Export of user project files prior to license expiration"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "notion",
@@ -578,8 +757,15 @@
       "Review workspace member limits and confirm."
     ],
     "retentionOfferWorkaround": "If paying annually, unused time converts to Notion Workspace credits rather than card refund unless requested through support.",
-    "legalStatuteReference": "ROSCA 15 U.S.C. \u00a7 8403",
-    "averageCancellationTimeMinutes": 2
+    "legalStatuteReference": "ROSCA 15 U.S.C. § 8403",
+    "averageCancellationTimeMinutes": 2,
+    "difficultyReason": "Hidden cancel button / submerged UI",
+    "requirements": [
+      "Account administrator credentials",
+      "Primary account billing email",
+      "Export of user project files prior to license expiration"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "figma",
@@ -597,8 +783,15 @@
       "Verify confirmation email."
     ],
     "retentionOfferWorkaround": "Unassigned viewer-restricted permissions can accidentally promote users to full paid editors. Downgrade team plan directly.",
-    "legalStatuteReference": "CARL \u00a7 17602",
-    "averageCancellationTimeMinutes": 2
+    "legalStatuteReference": "CARL § 17602",
+    "averageCancellationTimeMinutes": 2,
+    "difficultyReason": "Hidden cancel button / submerged UI",
+    "requirements": [
+      "Account administrator credentials",
+      "Primary account billing email",
+      "Export of user project files prior to license expiration"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "linkedin-premium",
@@ -616,14 +809,21 @@
       "Confirm cancellation reason and finalize."
     ],
     "retentionOfferWorkaround": "LinkedIn displays a 50% off for 2 months retention modal. If your goal is zero cost, ignore and continue to the final confirmation button.",
-    "legalStatuteReference": "California Business and Professions Code \u00a7 17602",
+    "legalStatuteReference": "California Business and Professions Code § 17602",
     "averageCancellationTimeMinutes": 3,
     "faqs": [
       {
         "question": "Can I get a refund if I forgot to cancel the free trial?",
         "answer": "LinkedIn's official policy denies refunds, but submitting an FTC negative option dispute notice usually triggers an exception refund within 48 hours."
       }
-    ]
+    ],
+    "difficultyReason": "Multi-step retention maze & penalty fees",
+    "requirements": [
+      "Account administrator credentials",
+      "Primary account billing email",
+      "Export of user project files prior to license expiration"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "aws",
@@ -649,7 +849,14 @@
         "question": "Why was I charged after closing AWS?",
         "answer": "Unterminated provisioned resources (like reserved instances or retained backups) continue to bill until explicitly deleted before account closure."
       }
-    ]
+    ],
+    "difficultyReason": "Hidden cancel button / submerged UI",
+    "requirements": [
+      "Root or administrative login credentials",
+      "Terminated active instances and released IP allocations",
+      "Payment card on file to settle outstanding hourly usage"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "google-cloud",
@@ -667,8 +874,15 @@
       "Confirm project unlinking and account closure."
     ],
     "retentionOfferWorkaround": "You must unlink billing accounts from active projects before Google allows account closure without error alerts.",
-    "legalStatuteReference": "CARL \u00a7 17600",
-    "averageCancellationTimeMinutes": 5
+    "legalStatuteReference": "CARL § 17600",
+    "averageCancellationTimeMinutes": 5,
+    "difficultyReason": "Hidden cancel button / submerged UI",
+    "requirements": [
+      "Root or administrative login credentials",
+      "Terminated active instances and released IP allocations",
+      "Payment card on file to settle outstanding hourly usage"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "digitalocean",
@@ -686,8 +900,15 @@
       "Confirm permanent deactivation."
     ],
     "retentionOfferWorkaround": "Ensure all snapshots and automated backups are purged; DigitalOcean bills for dormant snapshot storage.",
-    "legalStatuteReference": "ROSCA 15 U.S.C. \u00a7 8403",
-    "averageCancellationTimeMinutes": 4
+    "legalStatuteReference": "ROSCA 15 U.S.C. § 8403",
+    "averageCancellationTimeMinutes": 4,
+    "difficultyReason": "Hidden cancel button / submerged UI",
+    "requirements": [
+      "Root or administrative login credentials",
+      "Terminated active instances and released IP allocations",
+      "Payment card on file to settle outstanding hourly usage"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "cloudflare",
@@ -705,8 +926,15 @@
       "Confirm plan modification."
     ],
     "retentionOfferWorkaround": "Cloudflare requires individual cancellation of each domain subscription before overall billing is eliminated.",
-    "legalStatuteReference": "CARL \u00a7 17602",
-    "averageCancellationTimeMinutes": 3
+    "legalStatuteReference": "CARL § 17602",
+    "averageCancellationTimeMinutes": 3,
+    "difficultyReason": "Hidden cancel button / submerged UI",
+    "requirements": [
+      "Root or administrative login credentials",
+      "Terminated active instances and released IP allocations",
+      "Payment card on file to settle outstanding hourly usage"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "heroku",
@@ -724,8 +952,15 @@
       "Click 'Close account' at bottom of page."
     ],
     "retentionOfferWorkaround": "Heroku cannot delete account if any active third-party add-on (e.g., PostgreSQL, Redis) is attached.",
-    "legalStatuteReference": "ROSCA 15 U.S.C. \u00a7 8401",
-    "averageCancellationTimeMinutes": 3
+    "legalStatuteReference": "ROSCA 15 U.S.C. § 8401",
+    "averageCancellationTimeMinutes": 3,
+    "difficultyReason": "Hidden cancel button / submerged UI",
+    "requirements": [
+      "Root or administrative login credentials",
+      "Terminated active instances and released IP allocations",
+      "Payment card on file to settle outstanding hourly usage"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "godaddy",
@@ -743,9 +978,16 @@
       "Click 'Delete Product' to forfeit immediate ownership or let expire."
     ],
     "retentionOfferWorkaround": "GoDaddy separates 'Cancel Renewal' (lets service expire) from 'Delete My Product' (immediate shutoff). Always opt for 'Cancel Renewal' to avoid loss of domain access.",
-    "legalStatuteReference": "ICANN Transfer Policy & CARL \u00a7 17602",
+    "legalStatuteReference": "ICANN Transfer Policy & CARL § 17602",
     "averageCancellationTimeMinutes": 4,
-    "phoneContactFallback": "480-505-8877"
+    "phoneContactFallback": "480-505-8877",
+    "difficultyReason": "Multi-step retention maze & penalty fees",
+    "requirements": [
+      "Root or administrative login credentials",
+      "Terminated active instances and released IP allocations",
+      "Payment card on file to settle outstanding hourly usage"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "hostgator",
@@ -765,7 +1007,14 @@
     "retentionOfferWorkaround": "Often redirects customers to live chat support agents who are trained in intensive retention scripts. State 'I refuse all offers under FTC cancellation guidelines'.",
     "legalStatuteReference": "FTC Negative Option Rule (16 CFR Part 425)",
     "averageCancellationTimeMinutes": 8,
-    "phoneContactFallback": "866-964-2867"
+    "phoneContactFallback": "866-964-2867",
+    "difficultyReason": "Phone cancellation required",
+    "requirements": [
+      "Root or administrative login credentials",
+      "Terminated active instances and released IP allocations",
+      "Payment card on file to settle outstanding hourly usage"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "bluehost",
@@ -783,9 +1032,16 @@
       "Decline upsell calls or retention chat prompts."
     ],
     "retentionOfferWorkaround": "Bluehost auto-renews up to 15 days PRIOR to expiration. Disable auto-renew at least 20 days early to avoid surprise charges.",
-    "legalStatuteReference": "CARL \u00a7 17600",
+    "legalStatuteReference": "CARL § 17600",
     "averageCancellationTimeMinutes": 5,
-    "phoneContactFallback": "888-401-4678"
+    "phoneContactFallback": "888-401-4678",
+    "difficultyReason": "Multi-step retention maze & penalty fees",
+    "requirements": [
+      "Root or administrative login credentials",
+      "Terminated active instances and released IP allocations",
+      "Payment card on file to settle outstanding hourly usage"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "squarespace",
@@ -803,8 +1059,15 @@
       "Select reason and confirm immediate deactivation or end-of-cycle."
     ],
     "retentionOfferWorkaround": "Domain names bought through Squarespace must be cancelled separately in the Domains tab.",
-    "legalStatuteReference": "CARL \u00a7 17602",
-    "averageCancellationTimeMinutes": 3
+    "legalStatuteReference": "CARL § 17602",
+    "averageCancellationTimeMinutes": 3,
+    "difficultyReason": "Hidden cancel button / submerged UI",
+    "requirements": [
+      "Root or administrative login credentials",
+      "Terminated active instances and released IP allocations",
+      "Payment card on file to settle outstanding hourly usage"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "wix",
@@ -822,8 +1085,15 @@
       "Click 'Cancel Now' past the feature retainment warning."
     ],
     "retentionOfferWorkaround": "Wix provides a 14-day statutory money-back guarantee for first-time premium plans. After 14 days, auto-renewal must be cancelled before the 14-day prior window.",
-    "legalStatuteReference": "CARL \u00a7 17600 & ROSCA 15 U.S.C. \u00a7 8403",
-    "averageCancellationTimeMinutes": 3
+    "legalStatuteReference": "CARL § 17600 & ROSCA 15 U.S.C. § 8403",
+    "averageCancellationTimeMinutes": 3,
+    "difficultyReason": "Multi-screen retention survey",
+    "requirements": [
+      "Root or administrative login credentials",
+      "Terminated active instances and released IP allocations",
+      "Payment card on file to settle outstanding hourly usage"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "new-york-times",
@@ -842,7 +1112,7 @@
       "Confirm termination timestamp."
     ],
     "retentionOfferWorkaround": "NYT gates users behind a simulated human chatbot offering $1/week deals. Type 'agent cancel immediately' to force the bypass trigger.",
-    "legalStatuteReference": "California Business and Professions Code \u00a7 17602(c)",
+    "legalStatuteReference": "California Business and Professions Code § 17602(c)",
     "averageCancellationTimeMinutes": 6,
     "phoneContactFallback": "800-698-4637",
     "faqs": [
@@ -850,7 +1120,14 @@
         "question": "Can I cancel NYT online without calling?",
         "answer": "Yes, California and EU residency rules forced NYT to provide chat and online cancellation options for all subscribers."
       }
-    ]
+    ],
+    "difficultyReason": "Phone cancellation required",
+    "requirements": [
+      "Registered account email and password",
+      "Billing zip code on file",
+      "Cancellation request prior to monthly renewal cutoff"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "wall-street-journal",
@@ -865,12 +1142,19 @@
       "Access Dow Jones Customer Center.",
       "If online cancel link displays 'Call Customer Service', invoke UnTrap Legal Generator.",
       "Call 1-800-JOURNAL or initiate live chat.",
-      "Quote CARL \u00a7 17602 and demand immediate cancellation receipt."
+      "Quote CARL § 17602 and demand immediate cancellation receipt."
     ],
     "retentionOfferWorkaround": "WSJ frequently disables the digital cancel button based on geolocation IP checks outside California. Use our Legal Demand PDF to bypass phone agent hold times.",
-    "legalStatuteReference": "CARL \u00a7 17602 & New York Consumer Protection Laws",
+    "legalStatuteReference": "CARL § 17602 & New York Consumer Protection Laws",
     "averageCancellationTimeMinutes": 10,
-    "phoneContactFallback": "800-568-7625"
+    "phoneContactFallback": "800-568-7625",
+    "difficultyReason": "Phone cancellation required",
+    "requirements": [
+      "Registered account email and password",
+      "Billing zip code on file",
+      "Cancellation request prior to monthly renewal cutoff"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "washington-post",
@@ -888,8 +1172,15 @@
       "Click final confirmation button."
     ],
     "retentionOfferWorkaround": "WaPo attempts 1-2 retention price cuts. Decline both to preserve immediate expiration.",
-    "legalStatuteReference": "ROSCA 15 U.S.C. \u00a7 8403",
-    "averageCancellationTimeMinutes": 2
+    "legalStatuteReference": "ROSCA 15 U.S.C. § 8403",
+    "averageCancellationTimeMinutes": 2,
+    "difficultyReason": "Standard multi-step online survey",
+    "requirements": [
+      "Registered account email and password",
+      "Billing zip code on file",
+      "Cancellation request prior to monthly renewal cutoff"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "economist",
@@ -909,7 +1200,14 @@
     "retentionOfferWorkaround": "Live chat agents often stall with multi-year special pricing offers. Reiterate refusal.",
     "legalStatuteReference": "FTC Negative Option Rule (16 CFR Part 425)",
     "averageCancellationTimeMinutes": 8,
-    "phoneContactFallback": "800-456-6086"
+    "phoneContactFallback": "800-456-6086",
+    "difficultyReason": "Phone cancellation required",
+    "requirements": [
+      "Registered account email and password",
+      "Billing zip code on file",
+      "Cancellation request prior to monthly renewal cutoff"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "bloomberg",
@@ -927,8 +1225,15 @@
       "Confirm cancellation."
     ],
     "retentionOfferWorkaround": "Bloomberg warns that all saved watchlists and Bloomberg Terminal integration previews will expire. Proceed through confirmation.",
-    "legalStatuteReference": "CARL \u00a7 17600",
-    "averageCancellationTimeMinutes": 3
+    "legalStatuteReference": "CARL § 17600",
+    "averageCancellationTimeMinutes": 3,
+    "difficultyReason": "Multi-screen retention survey",
+    "requirements": [
+      "Registered account email and password",
+      "Billing zip code on file",
+      "Cancellation request prior to monthly renewal cutoff"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "financial-times",
@@ -946,9 +1251,16 @@
       "Complete verification."
     ],
     "retentionOfferWorkaround": "FT enforces a 14-day notice requirement for corporate or annual plans. Serve statutory cancellation notice if within renewal window.",
-    "legalStatuteReference": "UK Consumer Rights Act & CARL \u00a7 17602",
+    "legalStatuteReference": "UK Consumer Rights Act & CARL § 17602",
     "averageCancellationTimeMinutes": 4,
-    "phoneContactFallback": "800-628-8088"
+    "phoneContactFallback": "800-628-8088",
+    "difficultyReason": "Notice period required / forced cooldown delay",
+    "requirements": [
+      "Registered account email and password",
+      "Billing zip code on file",
+      "Cancellation request prior to monthly renewal cutoff"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "the-athletic",
@@ -966,8 +1278,15 @@
       "Click 'Complete Cancellation'."
     ],
     "retentionOfferWorkaround": "Owned by The New York Times, but retains a separate, faster web cancellation portal.",
-    "legalStatuteReference": "CARL \u00a7 17602",
-    "averageCancellationTimeMinutes": 2
+    "legalStatuteReference": "CARL § 17602",
+    "averageCancellationTimeMinutes": 2,
+    "difficultyReason": "Standard multi-step online survey",
+    "requirements": [
+      "Registered account email and password",
+      "Billing zip code on file",
+      "Cancellation request prior to monthly renewal cutoff"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "medium",
@@ -984,8 +1303,15 @@
       "Confirm cancellation modal."
     ],
     "retentionOfferWorkaround": "Clean interface without aggressive dark patterns.",
-    "legalStatuteReference": "CARL \u00a7 17600",
-    "averageCancellationTimeMinutes": 1
+    "legalStatuteReference": "CARL § 17600",
+    "averageCancellationTimeMinutes": 1,
+    "difficultyReason": "Hidden cancel button / submerged UI",
+    "requirements": [
+      "Registered account email and password",
+      "Billing zip code on file",
+      "Cancellation request prior to monthly renewal cutoff"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "substack",
@@ -1003,12 +1329,19 @@
       "Confirm cancellation."
     ],
     "retentionOfferWorkaround": "Substack allows individual publication cancellation rather than a single master toggle.",
-    "legalStatuteReference": "ROSCA 15 U.S.C. \u00a7 8403",
-    "averageCancellationTimeMinutes": 1
+    "legalStatuteReference": "ROSCA 15 U.S.C. § 8403",
+    "averageCancellationTimeMinutes": 1,
+    "difficultyReason": "Hidden cancel button / submerged UI",
+    "requirements": [
+      "Registered account email and password",
+      "Billing zip code on file",
+      "Cancellation request prior to monthly renewal cutoff"
+    ],
+    "lastVerified": "September 2026"
   },
   {
     "id": "wired",
-    "name": "Wired (Cond\u00e9 Nast)",
+    "name": "Wired (Condé Nast)",
     "slug": "wired",
     "category": "News Media",
     "difficultyRating": 3,
@@ -1016,14 +1349,21 @@
     "directBypassUrl": "https://www.wired.com/user-center/subscription",
     "standardUrl": "https://www.wired.com/user-center",
     "bypassSteps": [
-      "Log into Cond\u00e9 Nast customer portal.",
+      "Log into Condé Nast customer portal.",
       "Locate Wired Subscription.",
       "Select 'Cancel Auto-Renewal'.",
       "Confirm through exit surveys."
     ],
-    "retentionOfferWorkaround": "Cond\u00e9 Nast bundles digital with physical print delivery. Ensure print recurring delivery fee is explicitly marked terminated.",
-    "legalStatuteReference": "CARL \u00a7 17600 & FTC Negative Option Rules",
+    "retentionOfferWorkaround": "Condé Nast bundles digital with physical print delivery. Ensure print recurring delivery fee is explicitly marked terminated.",
+    "legalStatuteReference": "CARL § 17600 & FTC Negative Option Rules",
     "averageCancellationTimeMinutes": 3,
-    "phoneContactFallback": "800-769-4733"
+    "phoneContactFallback": "800-769-4733",
+    "difficultyReason": "Multi-screen retention survey",
+    "requirements": [
+      "Registered account email and password",
+      "Billing zip code on file",
+      "Cancellation request prior to monthly renewal cutoff"
+    ],
+    "lastVerified": "September 2026"
   }
 ]

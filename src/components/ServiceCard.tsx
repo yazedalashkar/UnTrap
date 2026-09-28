@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, AlertTriangle, Zap, Clock } from 'lucide-react';
+import { ArrowRight, AlertTriangle, Zap, Clock, ShieldCheck, Flag } from 'lucide-react';
 import { ServiceRecord } from '@/lib/types';
 import DirectCancelButton from '@/components/DirectCancelButton';
 import { useLanguage } from '@/lib/i18n';
@@ -85,28 +85,52 @@ export default function ServiceCard({ service, className = '' }: ServiceCardProp
               <Clock className="h-3 w-3 text-emerald-500" /> ~{service.averageCancellationTimeMinutes} {t('card.bypassTime')}
             </span>
           </div>
+
+          {service.difficultyReason && (
+            <div className="mt-2 text-[11px] font-medium text-amber-600 dark:text-amber-400 flex items-center gap-1">
+              <span className="opacity-70">•</span>
+              <span>{service.difficultyReason}</span>
+            </div>
+          )}
         </div>
 
-        <p className="mt-3.5 text-xs leading-relaxed text-muted-foreground line-clamp-2">
+        <p className="mt-3 text-xs leading-relaxed text-muted-foreground line-clamp-2">
           {service.bypassSteps[0]}
         </p>
       </div>
 
-      <div className="mt-6 border-t border-black/5 dark:border-white/10 pt-4 flex items-center justify-between gap-2">
-        <Link
-          href={`/cancel/${service.slug}`}
-          className="inline-flex items-center gap-1.5 text-xs font-bold text-muted-foreground transition-all duration-200 hover:text-foreground active:scale-95"
-        >
-          <span>{t('card.fullGuide')}</span>
-          <ArrowRight className={`h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1 ${lang === 'ar' ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
-        </Link>
+      <div className="mt-5 space-y-3">
+        <div className="flex items-center justify-between text-[10px] text-muted-foreground font-mono border-t border-black/5 dark:border-white/10 pt-2.5">
+          <span className="flex items-center gap-1">
+            <ShieldCheck className="h-3 w-3 text-emerald-500" />
+            <span>{t('card.lastVerified')}: {service.lastVerified || 'September 2026'}</span>
+          </span>
+          <Link
+            href={`/report-pattern?service=${service.slug}`}
+            className="flex items-center gap-1 hover:text-foreground transition underline opacity-80 hover:opacity-100"
+            title={t('card.reportOutdated')}
+          >
+            <Flag className="h-2.5 w-2.5" />
+            <span>{t('card.reportOutdated')}</span>
+          </Link>
+        </div>
 
-        <DirectCancelButton
-          url={service.directBypassUrl}
-          steps={service.bypassSteps}
-          serviceName={service.name}
-          variant="compact"
-        />
+        <div className="flex items-center justify-between gap-2">
+          <Link
+            href={`/cancel/${service.slug}`}
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-muted-foreground transition-all duration-200 hover:text-foreground active:scale-95"
+          >
+            <span>{t('card.fullGuide')}</span>
+            <ArrowRight className={`h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1 ${lang === 'ar' ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
+          </Link>
+
+          <DirectCancelButton
+            url={service.directBypassUrl}
+            steps={service.bypassSteps}
+            serviceName={service.name}
+            variant="compact"
+          />
+        </div>
       </div>
     </div>
   );

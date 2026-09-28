@@ -82,7 +82,7 @@ export default function LegalDemandGenerator({
       doc.setFontSize(12);
       doc.setTextColor(255, 255, 255);
       doc.text(
-        'STATUTORY NOTICE OF IMMEDIATE SUBSCRIPTION TERMINATION',
+        'FORMAL NOTICE OF SUBSCRIPTION TERMINATION',
         margin + 12,
         y + 22
       );
@@ -239,6 +239,11 @@ export default function LegalDemandGenerator({
             <h2 className="text-xl font-bold text-foreground">{t('generator.formTitle')}</h2>
             <p className="text-xs text-muted-foreground">{t('generator.formSubtitle')}</p>
           </div>
+        </div>
+
+                <div className="mt-3 rounded-2xl bg-amber-500/10 p-3.5 text-xs text-amber-500 dark:text-amber-400 border border-amber-500/20 leading-relaxed">
+          <strong>{lang === 'ar' ? 'تنبيه قانوني:' : 'Legal Notice:'}</strong>{' '}
+          {t('legal.disclaimer')}
         </div>
 
         <div className="mt-4 flex items-center gap-2 rounded-2xl bg-emerald-500/10 p-3.5 text-xs text-emerald-400 border border-emerald-500/20">

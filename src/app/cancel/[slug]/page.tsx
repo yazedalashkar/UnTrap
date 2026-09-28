@@ -168,7 +168,7 @@ export default async function ServiceCancelPage({ params }: PageProps) {
                     {service.category}
                   </span>
                   <span className="inline-flex items-center gap-1 rounded-full bg-red-500/10 px-3 py-1 text-xs font-bold text-red-400 border border-red-500/20">
-                    <ShieldAlert className="h-3.5 w-3.5" /> Trap Level {service.difficultyRating}/5
+                    <ShieldAlert className="h-3.5 w-3.5" /> Cancellation Difficulty: {service.difficultyRating}/5
                   </span>
                 </div>
                 <h1 className="text-3xl font-black tracking-tight sm:text-5xl text-foreground">
@@ -183,6 +183,43 @@ export default async function ServiceCancelPage({ params }: PageProps) {
                 </div>
               </div>
             </div>
+
+            {/* Metadata Bar: Last Verified & Report Outdated */}
+            <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-black/5 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.03] px-4 py-3 text-xs text-muted-foreground font-mono">
+              <div className="flex items-center gap-2">
+                <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+                <span>Last verified: <strong>{service.lastVerified || 'September 2026'}</strong></span>
+                {service.difficultyReason && (
+                  <>
+                    <span>•</span>
+                    <span className="text-amber-500 font-semibold">{service.difficultyReason}</span>
+                  </>
+                )}
+              </div>
+              <Link
+                href={`/report-pattern?service=${service.slug}`}
+                className="hover:text-foreground underline transition"
+              >
+                Report outdated information
+              </Link>
+            </div>
+
+            {/* Service Requirements Checklist */}
+            {service.requirements && service.requirements.length > 0 && (
+              <div className="mt-6 rounded-2xl border border-black/5 dark:border-white/10 bg-secondary/30 p-5 space-y-2.5">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-muted-foreground font-mono">
+                  Prerequisites & Requirements Before Canceling
+                </h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-foreground">
+                  {service.requirements.map((req, rIdx) => (
+                    <li key={rIdx} className="flex items-center gap-2">
+                      <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold">✓</span>
+                      <span>{req}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* Direct Kill-Switch Action Box */}
             <div className="mt-8 rounded-2xl border border-red-500/30 backdrop-blur-xl bg-red-950/[0.18] p-6 sm:p-8">
@@ -312,11 +349,14 @@ export default async function ServiceCancelPage({ params }: PageProps) {
                 Escalation Engine
               </div>
               <h2 className="text-2xl font-black text-foreground tracking-tight">
-                Generate Legal Notice for {service.name}
+                Generate Cancellation Notice for {service.name}
               </h2>
+              <div className="rounded-xl bg-amber-500/10 border border-amber-500/20 p-3 text-xs text-amber-500 leading-relaxed font-sans">
+                <strong>Notice:</strong> This tool provides a structured cancellation notice template based on consumer protection statutes (including California CARL § 17600 and ROSCA) and does not constitute formal legal advice.
+              </div>
               <p className="text-xs text-muted-foreground">
                 If {service.name} ignores your online request or attempts to bill you after this
-                date, download this statutory PDF demand notice and submit it to billing or your bank.
+                date, download this structured cancellation notice template to document your formal termination request.
               </p>
             </div>
 

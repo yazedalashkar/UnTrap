@@ -17,12 +17,15 @@ export interface ServiceRecord {
   slug: string;
   category: ServiceCategory;
   difficultyRating: 1 | 2 | 3 | 4 | 5;
+  difficultyReason?: string;
   darkPatternType: DarkPatternType;
   directBypassUrl: string;
   standardUrl: string;
   bypassSteps: string[];
-  retentionOfferWorkaround: string;
-  legalStatuteReference: string;
+  requirements?: string[];
+  lastVerified?: string;
+  retentionOfferWorkaround?: string;
+  legalStatuteReference?: string;
   averageCancellationTimeMinutes: number;
   phoneContactFallback?: string;
   faqs?: Array<{

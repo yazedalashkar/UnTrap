@@ -145,6 +145,21 @@ export default function DirectoryPage() {
         <Suspense fallback={<div className="container mx-auto py-20 text-center text-sm text-muted-foreground">Loading directory...</div>}>
           <DirectoryContent />
         </Suspense>
+              {/* Search Engine Crawlable Fallback & Indexing Links */}
+        <noscript>
+          <div className="container mx-auto px-4 py-8 text-xs text-muted-foreground">
+            <h2 className="text-sm font-bold text-foreground mb-4">All Subscription Cancellation Guides ({services.length})</h2>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+              {services.map((service) => (
+                <li key={service.id}>
+                  <a href={`/cancel/${service.slug}`} className="text-red-500 hover:underline">
+                    How to Cancel {service.name} ({service.category}) - Difficulty: {service.difficultyRating}/5
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </noscript>
       </main>
       <Footer />
     </>

@@ -1,4 +1,4 @@
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from '@/lib/theme';
 import FloatingNavDock from '@/components/FloatingNavDock';
 import { LanguageProvider } from '@/lib/i18n';

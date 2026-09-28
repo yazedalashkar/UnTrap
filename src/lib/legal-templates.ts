@@ -52,6 +52,11 @@ FORMAL NOTICE OF IMMEDIATE SUBSCRIPTION TERMINATION
 ____________________________________________
 توقيع المشترك: ${data.userName}
 صادر بموجب المادة 28 U.S.C. § 1746 تحت طائلة المسؤولية القانونية.
+
+--------------------------------------------------------------------------------
+تنويه قانوني (Disclaimer):
+هذا المستند يمثل نموذج إخطار رسمي لطلب إنهاء الاشتراك تم إعداده استناداً إلى 
+نصوص ومراجع حماية المستهلك القانونية، ولا يُعد استشارة قانونية مهنية.
 `;
   }
 
@@ -112,5 +117,11 @@ Respectfully submitted,
 ____________________________________________
 ${data.userName}
 Executed pursuant to 28 U.S.C. § 1746 under penalty of perjury.
+
+--------------------------------------------------------------------------------
+STATUTORY NOTICE DISCLAIMER:
+This instrument represents a standardized formal subscription cancellation 
+notice template prepared pursuant to consumer protection statutes. It does 
+not constitute individualized legal representation or legal advice.
 `;
 }

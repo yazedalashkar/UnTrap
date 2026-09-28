@@ -48,7 +48,7 @@ export const translations: Translations = {
     en: 'Subscription Traps',
   },
   'hero.subtitle': {
-    ar: 'روابط تخطي مباشرة، ومسارات مختصرة لتجاوز متاهات الإلغاء، وإخطارات قانونية ملزمة لأكثر من 50 منصة رقمية. تخطَّ استبيانات الإقناع المرهقة، ومكالمات خدمة العملاء الإلزامية، والأزرار المخفية.',
+    ar: 'روابط تخطي مباشرة، ومسارات مختصرة لتجاوز متاهات الإلغاء، ونماذج إخطارات قانونية لأكثر من 50 منصة رقمية. تخطَّ استبيانات الإقناع المرهقة، ومكالمات خدمة العملاء الإلزامية، والأزرار المخفية.',
     en: 'Direct bypass URLs, retention maze shortcuts, and statutory legal cancellation notices for 50+ enterprise services. Skip deceptive exit surveys, cancel phone calls, and hidden buttons.',
   },
   'hero.searchPlaceholder': {
@@ -150,7 +150,7 @@ export const translations: Translations = {
     en: 'Faced with a Phone Queue or In-Person Gym Visit?',
   },
   'legalTeaser.subtitle': {
-    ar: 'قم بإنشاء إخطار قانوني رسمي ملزم بالاستناد إلى المادة 17600 من قانون كاليفورنيا وقواعد لجنة التجارة الفيدرالية (FTC). أوقف تفويض السحب المالي الدوري فوراً مع حماية تامة للخصوصية وبدون إرسال بياناتك لأي خادم.',
+    ar: 'قم بإنشاء إخطار إلغاء رسمي استناداً إلى المادة 17600 من قانون كاليفورنيا وقواعد لجنة التجارة الفيدرالية (FTC). أوقف تفويض السحب المالي الدوري فوراً مع حماية تامة للخصوصية وبدون إرسال بياناتك لأي خادم.',
     en: 'Generate an enforceable Legal Demand Notice citing California Business & Professions Code § 17600 and the FTC Negative Option Rule. Revoke recurring payment authorization instantly with 100% local client-side PDF generation.',
   },
   'legalTeaser.cta': {
@@ -195,7 +195,16 @@ export const translations: Translations = {
   'pattern.delay_tactic': { ar: 'مماطلة وتأخير', en: 'Delay Tactic' },
 
   // Service Card
-  'card.trapLevel': { ar: 'مستوى الفخ', en: 'Trap Level' },
+  'card.difficulty': { ar: 'صعوبة الإلغاء', en: 'Cancellation Difficulty' },
+  'card.lastVerified': { ar: 'آخر تحقق', en: 'Last verified' },
+  'card.reportOutdated': { ar: 'الإبلاغ عن معلومات قديمة', en: 'Report outdated information' },
+  'card.requirements': { ar: 'المتطلبات', en: 'Requirements' },
+  'card.difficultyReason': { ar: 'سبب التقييم', en: 'Reason' },
+  'legal.disclaimer': {
+    ar: 'تنبيه: توفر هذه الأداة نموذج إخطار مبنياً على مراجع ومواد قانونية (مثل CARL § 17600 وقواعد ROSCA) ولا تقدم استشارة قانونية.',
+    en: 'Disclaimer: This tool provides a structured notice template based on consumer protection statutes (such as California CARL § 17600 and ROSCA) and does not constitute formal legal advice.'
+  },
+  'card.trapLevel': { ar: 'صعوبة الإلغاء', en: 'Cancellation Difficulty' },
   'card.bypassTime': { ar: 'دقيقة تخطي', en: 'm bypass' },
   'card.fullGuide': { ar: 'الدليل الكامل', en: 'Full Guide' },
   'card.directBypass': { ar: 'إلغاء مباشر', en: 'Direct Bypass' },
@@ -211,14 +220,14 @@ export const translations: Translations = {
     ar: 'تخطَّ طوابير الانتظار الهاتفية المرهقة، والأزرار المخفية، ومتاهات الاحتفاظ المعقدة. روابط غير مقنّعة وإرشادات مفصلة لـ 50 منصة عالمية.',
     en: 'Bypass 45-minute customer support hold lines, hidden cancel links, and multi-tier retention mazes. Direct unmasked URLs and step-by-step kill switches for 50 enterprise platforms.',
   },
-  'directory.minLevel': { ar: 'الحد الأدنى لمستوى الفخ:', en: 'Minimum Trap Level:' },
+  'directory.minLevel': { ar: 'الحد الأدنى لمستوى الصعوبة:', en: 'Minimum Difficulty Level:' },
   'directory.showing': { ar: 'عرض', en: 'Showing' },
   'directory.verifiedCount': { ar: 'إلغاء مباشر موثق', en: 'verified cancellation bypasses' },
   'directory.audited': { ar: 'يتم التدقيق المستمر لإزالة عراقيل الإلغاء', en: 'Continuously audited for counter-retention bypasses' },
 
   // Legal Generator Page
   'generator.badge': { ar: 'محرك الدفاع القانوني للمستهلك', en: 'Statutory Consumer Defense Engine' },
-  'generator.title': { ar: 'مُولّد إخطارات إلغاء الاشتراك الملزمة قانونياً', en: 'Legally Binding Cancellation Notice Generator' },
+  'generator.title': { ar: 'مُولّد إخطار إلغاء الاشتراك (Cancellation Notice Generator)', en: 'Subscription Cancellation Notice Generator' },
   'generator.desc': {
     ar: 'عندما تفرض عليك منصة ما الانتظار في الهاتف أو زيارة فروعها شخصياً لإلغاء الاشتراك، استخدم القوانين الفيدرالية وقانون كاليفورنيا لإجبارها على الإلغاء الفوري وإلغاء صلاحية السحب البنكي.',
     en: 'When subscription services gate cancellations behind 45-minute phone queues, hidden buttons, or deceptive retention mazes, invoke federal and California law to force immediate termination and revoke payment authorization.',
@@ -240,7 +249,7 @@ export const translations: Translations = {
   'generator.basisCombined': { ar: 'مشترك: قانون كاليفورنيا CARL § 17600 + ROSCA الفيدرالي (أعلى قوة قانونية)', en: 'Combined CARL § 17600 + ROSCA (Maximum Legal Weight)' },
   'generator.basisCarl': { ar: 'قانون كاليفورنيا CARL § 17600 (إلزامية زر الإلغاء الفوري الإلكتروني)', en: 'California CARL § 17600 (Strict Click-to-Cancel Mandate)' },
   'generator.basisRosca': { ar: 'قانون ROSCA الفيدرالي وقواعد الـ FTC لمكافحة الخداع', en: 'Federal ROSCA 15 U.S.C. § 8401 & FTC Negative Option' },
-  'generator.downloadBtn': { ar: 'تحميل الإخطار بصيغة PDF ملزم قانونياً', en: 'Download Legally Binding PDF' },
+  'generator.downloadBtn': { ar: 'تحميل إخطار الإلغاء (PDF)', en: 'Download Cancellation Notice (PDF)' },
   'generator.rendering': { ar: 'جارٍ توليد المستند...', en: 'Rendering PDF...' },
   'generator.copyBtn': { ar: 'نسخ النص', en: 'Copy Text' },
   'generator.copiedBtn': { ar: 'تم النسخ!', en: 'Copied!' },
