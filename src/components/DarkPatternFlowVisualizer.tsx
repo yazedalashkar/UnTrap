@@ -15,6 +15,7 @@ interface FlowVisualizerProps {
   serviceName: string;
   patternType: DarkPatternType;
   difficultyRating?: number;
+  difficultyRating?: number;
   averageMinutes: number;
   className?: string;
 }
