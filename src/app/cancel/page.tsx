@@ -21,6 +21,8 @@ const CATEGORIES: Array<'All' | ServiceCategory> = [
   'News Media',
 ];
 
+const services = servicesData as ServiceRecord[];
+
 function DirectoryContent() {
   const searchParams = useSearchParams();
   const initialCategory = (searchParams?.get('category') as ServiceCategory) || 'All';
@@ -34,8 +36,6 @@ function DirectoryContent() {
       setActiveCategory(param as ServiceCategory);
     }
   }, [searchParams]);
-
-  const services = servicesData as ServiceRecord[];
 
   const filteredServices = useMemo(() => {
     return services.filter((s) => {
