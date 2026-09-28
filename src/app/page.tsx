@@ -12,10 +12,6 @@ import {
   Scale,
   ArrowRight,
   FileCheck2,
-  Code2,
-  Github,
-  Mail,
-  Sparkles,
 } from 'lucide-react';
 
 export default function HomePage() {
