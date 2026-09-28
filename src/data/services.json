@@ -1,0 +1,1029 @@
+[
+  {
+    "id": "netflix",
+    "name": "Netflix",
+    "slug": "netflix",
+    "category": "Streaming",
+    "difficultyRating": 2,
+    "darkPatternType": "retention_maze",
+    "directBypassUrl": "https://www.netflix.com/youraccount?cancelMembership=true",
+    "standardUrl": "https://www.netflix.com/youraccount",
+    "bypassSteps": [
+      "Authenticate directly into your Netflix account.",
+      "Navigate to the direct kill-switch URL.",
+      "Click the blue 'Finish Cancellation' button on the prompt.",
+      "Decline any downgrade or ad-tier retention offers without clicking alternative buttons."
+    ],
+    "retentionOfferWorkaround": "When presented with 'Switch to Standard with ads for $6.99', click the smaller gray 'Finish Cancellation' button located at the lower fold.",
+    "legalStatuteReference": "California Business and Professions Code \u00a7 17602 (Immediate Online Cancellation Mandate)",
+    "averageCancellationTimeMinutes": 1,
+    "phoneContactFallback": "1-844-505-2993",
+    "faqs": [
+      {
+        "question": "Can I still watch until the billing period ends?",
+        "answer": "Yes, Netflix maintains streaming access until the end of your prepaid monthly billing cycle."
+      },
+      {
+        "question": "Does deleting the profile cancel the subscription?",
+        "answer": "No. Profile deletion does not stop recurring billing charges."
+      }
+    ]
+  },
+  {
+    "id": "spotify",
+    "name": "Spotify Premium",
+    "slug": "spotify",
+    "category": "Streaming",
+    "difficultyRating": 2,
+    "darkPatternType": "retention_maze",
+    "directBypassUrl": "https://www.spotify.com/account/change-plan/cancel/",
+    "standardUrl": "https://www.spotify.com/account/overview/",
+    "bypassSteps": [
+      "Access Spotify web account management.",
+      "Load the change-plan cancellation endpoint directly.",
+      "Scroll past the playlist preservation warning modal.",
+      "Confirm 'Continue to Cancel' and select final confirmation."
+    ],
+    "retentionOfferWorkaround": "Spotify presents 3 consecutive confirmation dialogs emphasizing lost offline downloads; bypass each by selecting the secondary text link at the footer.",
+    "legalStatuteReference": "FTC Negative Option Rule (16 CFR Part 425)",
+    "averageCancellationTimeMinutes": 2,
+    "faqs": [
+      {
+        "question": "Will I lose my saved playlists if I cancel Premium?",
+        "answer": "No, your playlists, saved tracks, and followers remain intact on the free ad-supported tier."
+      }
+    ]
+  },
+  {
+    "id": "hulu",
+    "name": "Hulu",
+    "slug": "hulu",
+    "category": "Streaming",
+    "difficultyRating": 3,
+    "darkPatternType": "delay_tactic",
+    "directBypassUrl": "https://secure.hulu.com/action/cancel",
+    "standardUrl": "https://secure.hulu.com/account",
+    "bypassSteps": [
+      "Log into your Hulu account settings portal.",
+      "Execute direct cancel action route.",
+      "Select 'Continue to Cancel' over the 'Pause Subscription' prompt.",
+      "Select any cancellation reason and submit confirmation."
+    ],
+    "retentionOfferWorkaround": "Hulu default-highlights 'Pause Subscription for 12 weeks' in primary green. Click the unstyled 'No, Cancel Subscription' link below.",
+    "legalStatuteReference": "California Automatic Renewal Law (CARL) \u00a7 17600",
+    "averageCancellationTimeMinutes": 2,
+    "faqs": [
+      {
+        "question": "Does pausing stop charges forever?",
+        "answer": "No, paused subscriptions auto-resume and charge your card after the selected pause period."
+      }
+    ]
+  },
+  {
+    "id": "disney-plus",
+    "name": "Disney+",
+    "slug": "disney-plus",
+    "category": "Streaming",
+    "difficultyRating": 2,
+    "darkPatternType": "retention_maze",
+    "directBypassUrl": "https://www.disneyplus.com/account/subscription",
+    "standardUrl": "https://www.disneyplus.com/account",
+    "bypassSteps": [
+      "Log into your Disney+ subscription overview.",
+      "Select 'Cancel Subscription' at the bottom of plan details.",
+      "Bypass the survey questionnaire.",
+      "Confirm cancellation on the final review banner."
+    ],
+    "retentionOfferWorkaround": "Ignore discounted bundle upsells (Hulu/Max add-ons) and verify the final cancellation confirmation email timestamp.",
+    "legalStatuteReference": "Restore Online Shoppers' Confidence Act (ROSCA) 15 U.S.C. \u00a7 8403",
+    "averageCancellationTimeMinutes": 2
+  },
+  {
+    "id": "max",
+    "name": "Max (HBO Max)",
+    "slug": "max",
+    "category": "Streaming",
+    "difficultyRating": 2,
+    "darkPatternType": "hidden_button",
+    "directBypassUrl": "https://auth.max.com/subscription/cancel",
+    "standardUrl": "https://auth.max.com/subscription",
+    "bypassSteps": [
+      "Sign in to Max account billing settings.",
+      "Load the direct cancel route.",
+      "Dismiss the retention carousel showing upcoming releases.",
+      "Select 'Continue Cancellation'."
+    ],
+    "retentionOfferWorkaround": "The cancellation confirmation button is rendered in low-contrast secondary slate while 'Keep Plan' is vivid purple.",
+    "legalStatuteReference": "CARL \u00a7 17602 & FTC Section 5 Unfair Methods of Competition",
+    "averageCancellationTimeMinutes": 2
+  },
+  {
+    "id": "apple-tv-plus",
+    "name": "Apple TV+",
+    "slug": "apple-tv-plus",
+    "category": "Streaming",
+    "difficultyRating": 3,
+    "darkPatternType": "hidden_button",
+    "directBypassUrl": "https://apps.apple.com/account/subscriptions",
+    "standardUrl": "https://tv.apple.com/settings",
+    "bypassSteps": [
+      "Trigger deep-link to Apple Subscriptions management.",
+      "Locate Apple TV+ under active recurring subscriptions.",
+      "Tap 'Cancel Subscription'.",
+      "Confirm when system modal prompts."
+    ],
+    "retentionOfferWorkaround": "On non-Apple devices, web cancellation requires navigating Apple ID account security challenges before exposing subscription controls.",
+    "legalStatuteReference": "CARL \u00a7 17600(b) Multi-platform parity provision",
+    "averageCancellationTimeMinutes": 3
+  },
+  {
+    "id": "paramount-plus",
+    "name": "Paramount+",
+    "slug": "paramount-plus",
+    "category": "Streaming",
+    "difficultyRating": 3,
+    "darkPatternType": "delay_tactic",
+    "directBypassUrl": "https://www.paramountplus.com/account/cancel/",
+    "standardUrl": "https://www.paramountplus.com/account/",
+    "bypassSteps": [
+      "Log into Paramount+ billing portal.",
+      "Navigate to cancel workflow.",
+      "Decline 2-month free promotion if prompted or accept to delay charge.",
+      "Complete final cancellation confirmation."
+    ],
+    "retentionOfferWorkaround": "Paramount+ frequently offers 1-2 free months. If you wish to permanently terminate, decline the offer twice consecutively.",
+    "legalStatuteReference": "FTC Negative Option Rule (16 CFR Part 425)",
+    "averageCancellationTimeMinutes": 3
+  },
+  {
+    "id": "youtube-premium",
+    "name": "YouTube Premium",
+    "slug": "youtube-premium",
+    "category": "Streaming",
+    "difficultyRating": 2,
+    "darkPatternType": "retention_maze",
+    "directBypassUrl": "https://www.youtube.com/paid_memberships?action=cancel",
+    "standardUrl": "https://www.youtube.com/paid_memberships",
+    "bypassSteps": [
+      "Open Google/YouTube paid memberships tab.",
+      "Expand Manage Membership dropdown.",
+      "Click 'Deactivate' then choose 'Continue to cancel' instead of pause.",
+      "Confirm reason and final termination."
+    ],
+    "retentionOfferWorkaround": "YouTube prompts 'Pause for up to 6 months' with heavy styling. Select 'Continue to Cancel' link directly.",
+    "legalStatuteReference": "ROSCA 15 U.S.C. \u00a7 8401",
+    "averageCancellationTimeMinutes": 2
+  },
+  {
+    "id": "peacock",
+    "name": "Peacock",
+    "slug": "peacock",
+    "category": "Streaming",
+    "difficultyRating": 2,
+    "darkPatternType": "retention_maze",
+    "directBypassUrl": "https://www.peacocktv.com/account/plans/cancel",
+    "standardUrl": "https://www.peacocktv.com/account/plans",
+    "bypassSteps": [
+      "Log in to Peacock account.",
+      "Click 'Change Plan' or direct cancel link.",
+      "Select 'Cancel Plan'.",
+      "Confirm through retention warning screens."
+    ],
+    "retentionOfferWorkaround": "Bypass the sports and live television retention warnings by clicking 'Continue to Cancel' at the page base.",
+    "legalStatuteReference": "CARL \u00a7 17602",
+    "averageCancellationTimeMinutes": 2
+  },
+  {
+    "id": "amazon-prime-video",
+    "name": "Amazon Prime Video",
+    "slug": "amazon-prime-video",
+    "category": "Streaming",
+    "difficultyRating": 4,
+    "darkPatternType": "retention_maze",
+    "directBypassUrl": "https://www.amazon.com/mc/manage?action=cancel",
+    "standardUrl": "https://www.amazon.com/gp/primecentral",
+    "bypassSteps": [
+      "Access direct Prime membership cancellation portal.",
+      "Navigate past the 3-step 'End Membership' warning flow.",
+      "Click 'Continue to Cancel' on step 1.",
+      "Click 'Cancel Membership' on step 2.",
+      "Select 'End on [Date]' on step 3."
+    ],
+    "retentionOfferWorkaround": "FTC v. Amazon (2023) dark patterns lawsuit highlights this exact 4-page 'Iliad Flow'. Persist through all 3 stages without selecting 'Remind Me Later'.",
+    "legalStatuteReference": "FTC Act Section 5 Deceptive Acts & Practices",
+    "averageCancellationTimeMinutes": 4,
+    "faqs": [
+      {
+        "question": "Can I get a refund for unused Prime days?",
+        "answer": "Yes, if you have not used Prime shipping or video benefits during the current billing period, Amazon issues an automated prorated refund."
+      }
+    ]
+  },
+  {
+    "id": "planet-fitness",
+    "name": "Planet Fitness",
+    "slug": "planet-fitness",
+    "category": "Gyms",
+    "difficultyRating": 5,
+    "darkPatternType": "phone_gate",
+    "directBypassUrl": "https://www.planetfitness.com/about-planet-fitness/contact-us",
+    "standardUrl": "https://www.planetfitness.com/my-account",
+    "bypassSteps": [
+      "Planet Fitness contractually restricts online cancellation in most club franchises.",
+      "Generate our Statutory Legal Cancellation Notice via UnTrap Generator.",
+      "Send via Certified Mail with Return Receipt Requested to your home club location.",
+      "Alternatively, hand-deliver the notice in person and demand a signed receipt timestamp."
+    ],
+    "retentionOfferWorkaround": "If residing in California or New York, invoke state auto-renewal law amendments requiring online cancellation for agreements initiated online.",
+    "legalStatuteReference": "California Business and Professions Code \u00a7 17602 & New York Gen. Bus. Law \u00a7 527-a",
+    "averageCancellationTimeMinutes": 15,
+    "phoneContactFallback": "844-880-7180",
+    "faqs": [
+      {
+        "question": "Can I cancel Planet Fitness over the phone?",
+        "answer": "Standard franchise policies prohibit phone cancellations. You must use certified mail or deliver an in-person written notice."
+      }
+    ]
+  },
+  {
+    "id": "equinox",
+    "name": "Equinox",
+    "slug": "equinox",
+    "category": "Gyms",
+    "difficultyRating": 5,
+    "darkPatternType": "delay_tactic",
+    "directBypassUrl": "https://www.equinox.com/contact",
+    "standardUrl": "https://www.equinox.com/account",
+    "bypassSteps": [
+      "Review the 45-day notice clause in your membership contract.",
+      "Generate a formal notice referencing medical/relocation clauses or CARL provisions.",
+      "Submit notice via certified mail or registered manager email address.",
+      "Request written confirmation of final billing cycle date."
+    ],
+    "retentionOfferWorkaround": "Managers will enforce 30-45 day advance notice and demand in-person exit interviews. The UnTrap Legal Notice overrides oral interview mandates.",
+    "legalStatuteReference": "CARL \u00a7 17602 & Health Club Services Act",
+    "averageCancellationTimeMinutes": 20,
+    "phoneContactFallback": "866-332-6549"
+  },
+  {
+    "id": "la-fitness",
+    "name": "LA Fitness",
+    "slug": "la-fitness",
+    "category": "Gyms",
+    "difficultyRating": 4,
+    "darkPatternType": "phone_gate",
+    "directBypassUrl": "https://www.lafitness.com/Pages/cancelmembership.aspx",
+    "standardUrl": "https://www.lafitness.com/Pages/account.aspx",
+    "bypassSteps": [
+      "Log into web portal and generate the formal LA Fitness cancellation form.",
+      "Print and sign the generated form.",
+      "Mail to: LA Fitness, P.O. Box 54170, Irvine, CA 92619-4170 via certified mail.",
+      "Or deliver to Operations Manager at your home club between 9 AM and 5 PM Mon-Fri."
+    ],
+    "retentionOfferWorkaround": "Portal blocks one-click submission by forcing users to physically print paper slips. Use UnTrap PDF demand to execute compliant legal notice.",
+    "legalStatuteReference": "California Civil Code \u00a7 1812.85",
+    "averageCancellationTimeMinutes": 10,
+    "phoneContactFallback": "949-255-7200"
+  },
+  {
+    "id": "anytime-fitness",
+    "name": "Anytime Fitness",
+    "slug": "anytime-fitness",
+    "category": "Gyms",
+    "difficultyRating": 4,
+    "darkPatternType": "phone_gate",
+    "directBypassUrl": "https://www.anytimefitness.com/contact/",
+    "standardUrl": "https://www.anytimefitness.com/membership/",
+    "bypassSteps": [
+      "Each franchise is independently owned with local cancellation jurisdiction.",
+      "Obtain the club manager's direct email and registered postal address.",
+      "Send UnTrap legal cancellation notice citing statutory cool-off or renewal termination.",
+      "Block card billing tokens if unacknowledged after 7 business days."
+    ],
+    "retentionOfferWorkaround": "Avoid high cancellation fee claims by verifying whether your original contract period has converted into month-to-month auto-renewal.",
+    "legalStatuteReference": "ROSCA 15 U.S.C. \u00a7 8403 & State Health Club Statutes",
+    "averageCancellationTimeMinutes": 15
+  },
+  {
+    "id": "golds-gym",
+    "name": "Gold's Gym",
+    "slug": "golds-gym",
+    "category": "Gyms",
+    "difficultyRating": 4,
+    "darkPatternType": "phone_gate",
+    "directBypassUrl": "https://www.goldsgym.com/contact-us/",
+    "standardUrl": "https://www.goldsgym.com/my-account/",
+    "bypassSteps": [
+      "Identify whether your club is managed through ABC Financial or in-house billing.",
+      "Send formal cancellation notice via certified letter to your home gym location.",
+      "Retain USPS certified tracking receipt as statutory defense.",
+      "Request confirmation number in writing."
+    ],
+    "retentionOfferWorkaround": "Third-party billing processor (ABC Fitness) often denies receiving oral cancellations. A signed certified letter eliminates plausible deniability.",
+    "legalStatuteReference": "CARL \u00a7 17600 & Electronic Fund Transfer Act (EFTA)",
+    "averageCancellationTimeMinutes": 12
+  },
+  {
+    "id": "crunch-fitness",
+    "name": "Crunch Fitness",
+    "slug": "crunch-fitness",
+    "category": "Gyms",
+    "difficultyRating": 3,
+    "darkPatternType": "delay_tactic",
+    "directBypassUrl": "https://www.crunch.com/contact-us",
+    "standardUrl": "https://www.crunch.com/my-account",
+    "bypassSteps": [
+      "Access club contact portal.",
+      "Select 'Membership Services' and 'Cancellation Request'.",
+      "Submit required member ID and home gym location.",
+      "Deliver certified legal copy if no response received within 72 hours."
+    ],
+    "retentionOfferWorkaround": "Crunch signature clubs allow web submissions; franchised locations often demand certified mail. Use our dual digital/mail demand generator.",
+    "legalStatuteReference": "FTC Negative Option Rule (16 CFR Part 425)",
+    "averageCancellationTimeMinutes": 10,
+    "phoneContactFallback": "800-547-1744"
+  },
+  {
+    "id": "f45-training",
+    "name": "F45 Training",
+    "slug": "f45-training",
+    "category": "Gyms",
+    "difficultyRating": 3,
+    "darkPatternType": "delay_tactic",
+    "directBypassUrl": "https://f45training.com/contact-us/",
+    "standardUrl": "https://f45training.com/",
+    "bypassSteps": [
+      "Email your studio head coach and manager.",
+      "Provide minimum 30-day notice prior to the upcoming renewal date.",
+      "Attach UnTrap formal cancellation notice.",
+      "Demand confirmation of billing freeze."
+    ],
+    "retentionOfferWorkaround": "Studios enforce strict 30-day auto-draft cutoff dates. Serving statutory notice locks the timestamp regardless of delayed studio processing.",
+    "legalStatuteReference": "CARL \u00a7 17602",
+    "averageCancellationTimeMinutes": 8
+  },
+  {
+    "id": "orangetheory-fitness",
+    "name": "Orangetheory Fitness",
+    "slug": "orangetheory-fitness",
+    "category": "Gyms",
+    "difficultyRating": 4,
+    "darkPatternType": "phone_gate",
+    "directBypassUrl": "https://www.orangetheory.com/en-us/contact-us",
+    "standardUrl": "https://www.orangetheory.com/en-us/member-portal",
+    "bypassSteps": [
+      "Orangetheory requires an official in-studio cancellation form.",
+      "Submit 30-day written notice prior to next bill date.",
+      "Obtain a signed copy from the front desk supervisor.",
+      "Track the final billed cycle to prevent unauthorized subsequent drafts."
+    ],
+    "retentionOfferWorkaround": "If unable to visit in person, email the studio manager with an executed UnTrap PDF notice and request electronic confirmation under UETA.",
+    "legalStatuteReference": "Uniform Electronic Transactions Act (UETA) & CARL \u00a7 17602",
+    "averageCancellationTimeMinutes": 10
+  },
+  {
+    "id": "24-hour-fitness",
+    "name": "24 Hour Fitness",
+    "slug": "24-hour-fitness",
+    "category": "Gyms",
+    "difficultyRating": 3,
+    "darkPatternType": "delay_tactic",
+    "directBypassUrl": "https://www.24hourfitness.com/membership/cancel/",
+    "standardUrl": "https://www.24hourfitness.com/myaccount/",
+    "bypassSteps": [
+      "Go directly to the 24 Hour Fitness online cancel route.",
+      "Authenticate with your member number and birthdate.",
+      "Confirm cancellation request.",
+      "Save confirmation code immediately."
+    ],
+    "retentionOfferWorkaround": "California members are granted direct web cancellation by law; out-of-state users might be routed to club calls. Use California billing address or statutory notice.",
+    "legalStatuteReference": "California Business and Professions Code \u00a7 17602",
+    "averageCancellationTimeMinutes": 5,
+    "phoneContactFallback": "888-243-5002"
+  },
+  {
+    "id": "lifetime-fitness",
+    "name": "Life Time Fitness",
+    "slug": "lifetime-fitness",
+    "category": "Gyms",
+    "difficultyRating": 4,
+    "darkPatternType": "phone_gate",
+    "directBypassUrl": "https://my.lifetime.life/account/membership.html",
+    "standardUrl": "https://my.lifetime.life/",
+    "bypassSteps": [
+      "Log into your Life Time member dashboard.",
+      "Check cancellation policies (requires 30-day notice before the 1st of the month).",
+      "Submit certified written notice or request in-person appointment with Member Services.",
+      "Retain written verification."
+    ],
+    "retentionOfferWorkaround": "Life Time requires notice by the 10th or 15th to prevent next month billing. Deliver UnTrap legal demand to establish strict date stamping.",
+    "legalStatuteReference": "ROSCA 15 U.S.C. \u00a7 8403",
+    "averageCancellationTimeMinutes": 10,
+    "phoneContactFallback": "888-430-6432"
+  },
+  {
+    "id": "adobe-creative-cloud",
+    "name": "Adobe Creative Cloud",
+    "slug": "adobe-creative-cloud",
+    "category": "SaaS",
+    "difficultyRating": 5,
+    "darkPatternType": "retention_maze",
+    "directBypassUrl": "https://account.adobe.com/plans/cancel",
+    "standardUrl": "https://account.adobe.com/plans",
+    "bypassSteps": [
+      "Navigate to Adobe Plan Management portal.",
+      "Click 'Manage Plan' then 'Cancel your plan'.",
+      "Bypass the Early Termination Fee warning (often hundreds of dollars).",
+      "Bypass the offers screen (e.g., 2 free months or 60 days free).",
+      "Confirm final cancellation."
+    ],
+    "retentionOfferWorkaround": "LEGENDARY ADOBE LOOPHOLE: If hit with a massive early termination penalty fee, change your plan to a different tier (e.g., Photography plan). Under policy, you have 14 days to cancel the new plan for a 100% refund and zero cancellation fees!",
+    "legalStatuteReference": "FTC v. Adobe Inc. (2024 DOJ/FTC Lawsuit for Deceptive Early Termination Fees)",
+    "averageCancellationTimeMinutes": 6,
+    "phoneContactFallback": "800-833-6687",
+    "faqs": [
+      {
+        "question": "Is the Adobe fee switch loophole legal?",
+        "answer": "Yes, changing your plan creates a new consumer contract subject to a mandatory 14-day statutory no-penalty cancellation window."
+      }
+    ]
+  },
+  {
+    "id": "canva",
+    "name": "Canva Pro",
+    "slug": "canva",
+    "category": "SaaS",
+    "difficultyRating": 2,
+    "darkPatternType": "retention_maze",
+    "directBypassUrl": "https://www.canva.com/settings/billing-and-teams",
+    "standardUrl": "https://www.canva.com/settings/",
+    "bypassSteps": [
+      "Open Canva billing settings.",
+      "Locate Subscription tier and click '... > Cancel subscription'.",
+      "Select 'Continue cancellation' past the feature showcase.",
+      "Confirm cancellation."
+    ],
+    "retentionOfferWorkaround": "Canva warns that team brand kits and premium stock images will become locked. Click 'Continue to cancel' at lower left.",
+    "legalStatuteReference": "CARL \u00a7 17602",
+    "averageCancellationTimeMinutes": 2
+  },
+  {
+    "id": "microsoft-365",
+    "name": "Microsoft 365",
+    "slug": "microsoft-365",
+    "category": "SaaS",
+    "difficultyRating": 3,
+    "darkPatternType": "hidden_button",
+    "directBypassUrl": "https://account.microsoft.com/services/cancel",
+    "standardUrl": "https://account.microsoft.com/services",
+    "bypassSteps": [
+      "Sign into Microsoft account management.",
+      "Select 'Manage' next to Microsoft 365.",
+      "Click 'Cancel subscription' or 'Turn off recurring billing'.",
+      "Confirm choice on confirmation dialogue."
+    ],
+    "retentionOfferWorkaround": "Microsoft separates 'Cancel now with refund' and 'Turn off recurring billing' depending on whether you are in your initial 30 days.",
+    "legalStatuteReference": "ROSCA 15 U.S.C. \u00a7 8403",
+    "averageCancellationTimeMinutes": 3
+  },
+  {
+    "id": "slack",
+    "name": "Slack Pro",
+    "slug": "slack",
+    "category": "SaaS",
+    "difficultyRating": 2,
+    "darkPatternType": "hidden_button",
+    "directBypassUrl": "https://my.slack.com/admin/billing/manage",
+    "standardUrl": "https://my.slack.com/admin/billing",
+    "bypassSteps": [
+      "Access Slack Workspace Admin Billing.",
+      "Click 'Change Plan' or 'Downgrade to Free'.",
+      "Confirm team downgrade.",
+      "Verify end of billing period date."
+    ],
+    "retentionOfferWorkaround": "Must be executed by Workspace Primary Owner; admins without billing privileges are hidden from cancellation switches.",
+    "legalStatuteReference": "CARL \u00a7 17600",
+    "averageCancellationTimeMinutes": 2
+  },
+  {
+    "id": "zoom",
+    "name": "Zoom Workplace",
+    "slug": "zoom",
+    "category": "SaaS",
+    "difficultyRating": 2,
+    "darkPatternType": "retention_maze",
+    "directBypassUrl": "https://zoom.us/billing/plan",
+    "standardUrl": "https://zoom.us/billing",
+    "bypassSteps": [
+      "Sign in to Zoom Billing portal.",
+      "Under Current Plans, click 'Cancel Plan'.",
+      "Select reason for cancellation in dialog.",
+      "Confirm cancellation."
+    ],
+    "retentionOfferWorkaround": "Zoom presents 20-40% discount vouchers upon cancellation attempt. Decline to finalize termination.",
+    "legalStatuteReference": "FTC Negative Option Rule (16 CFR Part 425)",
+    "averageCancellationTimeMinutes": 2
+  },
+  {
+    "id": "dropbox",
+    "name": "Dropbox Plus",
+    "slug": "dropbox",
+    "category": "SaaS",
+    "difficultyRating": 3,
+    "darkPatternType": "retention_maze",
+    "directBypassUrl": "https://www.dropbox.com/account/plan/cancel",
+    "standardUrl": "https://www.dropbox.com/account/plan",
+    "bypassSteps": [
+      "Navigate to direct Dropbox downgrade link.",
+      "Scroll past the storage loss visual warnings.",
+      "Click 'Continue with downgrade' through 3 screens.",
+      "Confirm final downgrade to Basic."
+    ],
+    "retentionOfferWorkaround": "Dropbox prompts with 'Keep my plan' in bold blue and 'Continue with downgrade' as ghost button. Choose the ghost link.",
+    "legalStatuteReference": "CARL \u00a7 17602",
+    "averageCancellationTimeMinutes": 3
+  },
+  {
+    "id": "github",
+    "name": "GitHub Copilot / Pro",
+    "slug": "github",
+    "category": "SaaS",
+    "difficultyRating": 1,
+    "darkPatternType": "hidden_button",
+    "directBypassUrl": "https://github.com/settings/billing/summary",
+    "standardUrl": "https://github.com/settings/billing",
+    "bypassSteps": [
+      "Open GitHub Billing & Plans.",
+      "Locate Copilot or GitHub Pro.",
+      "Click 'Edit' or dropdown and choose 'Cancel Copilot' / 'Downgrade'.",
+      "Type account confirmation if requested."
+    ],
+    "retentionOfferWorkaround": "Minimal dark patterns; ensure seats are de-allocated in org billing if managing team licenses.",
+    "legalStatuteReference": "CARL \u00a7 17600",
+    "averageCancellationTimeMinutes": 1
+  },
+  {
+    "id": "notion",
+    "name": "Notion Plus",
+    "slug": "notion",
+    "category": "SaaS",
+    "difficultyRating": 2,
+    "darkPatternType": "hidden_button",
+    "directBypassUrl": "https://www.notion.so/settings/billing",
+    "standardUrl": "https://www.notion.so/settings",
+    "bypassSteps": [
+      "Go to Settings & Members > Billing.",
+      "Click 'Change plan'.",
+      "Select 'Downgrade to Free'.",
+      "Review workspace member limits and confirm."
+    ],
+    "retentionOfferWorkaround": "If paying annually, unused time converts to Notion Workspace credits rather than card refund unless requested through support.",
+    "legalStatuteReference": "ROSCA 15 U.S.C. \u00a7 8403",
+    "averageCancellationTimeMinutes": 2
+  },
+  {
+    "id": "figma",
+    "name": "Figma Professional",
+    "slug": "figma",
+    "category": "SaaS",
+    "difficultyRating": 2,
+    "darkPatternType": "hidden_button",
+    "directBypassUrl": "https://www.figma.com/settings/team_plans",
+    "standardUrl": "https://www.figma.com/settings",
+    "bypassSteps": [
+      "Go to Team Settings > Billing.",
+      "Click 'Cancel subscription' or reduce paid editor seats to zero.",
+      "Downgrade team to Starter plan.",
+      "Verify confirmation email."
+    ],
+    "retentionOfferWorkaround": "Unassigned viewer-restricted permissions can accidentally promote users to full paid editors. Downgrade team plan directly.",
+    "legalStatuteReference": "CARL \u00a7 17602",
+    "averageCancellationTimeMinutes": 2
+  },
+  {
+    "id": "linkedin-premium",
+    "name": "LinkedIn Premium",
+    "slug": "linkedin-premium",
+    "category": "SaaS",
+    "difficultyRating": 4,
+    "darkPatternType": "retention_maze",
+    "directBypassUrl": "https://www.linkedin.com/premium/cancel/",
+    "standardUrl": "https://www.linkedin.com/mypreferences/d/manage-subscription",
+    "bypassSteps": [
+      "Access direct LinkedIn Premium cancellation url.",
+      "Click 'Continue to cancel' past InMail forfeit alerts.",
+      "Bypass the 50% discount retention offer (unless you want it!).",
+      "Confirm cancellation reason and finalize."
+    ],
+    "retentionOfferWorkaround": "LinkedIn displays a 50% off for 2 months retention modal. If your goal is zero cost, ignore and continue to the final confirmation button.",
+    "legalStatuteReference": "California Business and Professions Code \u00a7 17602",
+    "averageCancellationTimeMinutes": 3,
+    "faqs": [
+      {
+        "question": "Can I get a refund if I forgot to cancel the free trial?",
+        "answer": "LinkedIn's official policy denies refunds, but submitting an FTC negative option dispute notice usually triggers an exception refund within 48 hours."
+      }
+    ]
+  },
+  {
+    "id": "aws",
+    "name": "Amazon Web Services (AWS)",
+    "slug": "aws",
+    "category": "Cloud",
+    "difficultyRating": 4,
+    "darkPatternType": "hidden_button",
+    "directBypassUrl": "https://console.aws.amazon.com/billing/home#/account",
+    "standardUrl": "https://console.aws.amazon.com/billing/home",
+    "bypassSteps": [
+      "Sign into AWS root account.",
+      "Terminate all active EC2, RDS, and S3 resources across ALL global regions.",
+      "Navigate to Account Settings base.",
+      "Check all acknowledgement boxes under 'Close Account'.",
+      "Click 'Close Account'."
+    ],
+    "retentionOfferWorkaround": "CRITICAL TRAP: Closing an AWS account does NOT delete orphaned Elastic IPs, NAT Gateways, or active KMS keys in non-default regions, which will continue accumulating charges. Clean up infrastructure before closing!",
+    "legalStatuteReference": "UCC Article 2 & Consumer Contract Fairness Rules",
+    "averageCancellationTimeMinutes": 15,
+    "faqs": [
+      {
+        "question": "Why was I charged after closing AWS?",
+        "answer": "Unterminated provisioned resources (like reserved instances or retained backups) continue to bill until explicitly deleted before account closure."
+      }
+    ]
+  },
+  {
+    "id": "google-cloud",
+    "name": "Google Cloud Platform (GCP)",
+    "slug": "google-cloud",
+    "category": "Cloud",
+    "difficultyRating": 3,
+    "darkPatternType": "hidden_button",
+    "directBypassUrl": "https://console.cloud.google.com/billing/manage",
+    "standardUrl": "https://console.cloud.google.com/billing",
+    "bypassSteps": [
+      "Navigate to Cloud Billing Management.",
+      "Select billing account > Account Management.",
+      "Click 'Close Billing Account' at the top bar.",
+      "Confirm project unlinking and account closure."
+    ],
+    "retentionOfferWorkaround": "You must unlink billing accounts from active projects before Google allows account closure without error alerts.",
+    "legalStatuteReference": "CARL \u00a7 17600",
+    "averageCancellationTimeMinutes": 5
+  },
+  {
+    "id": "digitalocean",
+    "name": "DigitalOcean",
+    "slug": "digitalocean",
+    "category": "Cloud",
+    "difficultyRating": 2,
+    "darkPatternType": "hidden_button",
+    "directBypassUrl": "https://cloud.digitalocean.com/settings/billing",
+    "standardUrl": "https://cloud.digitalocean.com/settings",
+    "bypassSteps": [
+      "Destroy all active Droplets, Volumes, and Spaces.",
+      "Go to Billing > Deactivate Account.",
+      "Provide feedback reason.",
+      "Confirm permanent deactivation."
+    ],
+    "retentionOfferWorkaround": "Ensure all snapshots and automated backups are purged; DigitalOcean bills for dormant snapshot storage.",
+    "legalStatuteReference": "ROSCA 15 U.S.C. \u00a7 8403",
+    "averageCancellationTimeMinutes": 4
+  },
+  {
+    "id": "cloudflare",
+    "name": "Cloudflare",
+    "slug": "cloudflare",
+    "category": "Cloud",
+    "difficultyRating": 2,
+    "darkPatternType": "hidden_button",
+    "directBypassUrl": "https://dash.cloudflare.com/?to=/:account/billing/subscriptions",
+    "standardUrl": "https://dash.cloudflare.com/",
+    "bypassSteps": [
+      "Open Cloudflare Billing > Subscriptions.",
+      "Downgrade Pro/Business zones to Free tier.",
+      "Cancel add-on services (Argo, Workers Paid, Load Balancing).",
+      "Confirm plan modification."
+    ],
+    "retentionOfferWorkaround": "Cloudflare requires individual cancellation of each domain subscription before overall billing is eliminated.",
+    "legalStatuteReference": "CARL \u00a7 17602",
+    "averageCancellationTimeMinutes": 3
+  },
+  {
+    "id": "heroku",
+    "name": "Heroku",
+    "slug": "heroku",
+    "category": "Cloud",
+    "difficultyRating": 2,
+    "darkPatternType": "hidden_button",
+    "directBypassUrl": "https://dashboard.heroku.com/account/billing",
+    "standardUrl": "https://dashboard.heroku.com/account",
+    "bypassSteps": [
+      "Delete all apps running Eco/Basic dynos or add-ons.",
+      "Go to Account Settings > Billing.",
+      "Delete credit card details.",
+      "Click 'Close account' at bottom of page."
+    ],
+    "retentionOfferWorkaround": "Heroku cannot delete account if any active third-party add-on (e.g., PostgreSQL, Redis) is attached.",
+    "legalStatuteReference": "ROSCA 15 U.S.C. \u00a7 8401",
+    "averageCancellationTimeMinutes": 3
+  },
+  {
+    "id": "godaddy",
+    "name": "GoDaddy",
+    "slug": "godaddy",
+    "category": "Cloud",
+    "difficultyRating": 4,
+    "darkPatternType": "retention_maze",
+    "directBypassUrl": "https://account.godaddy.com/subscriptions",
+    "standardUrl": "https://account.godaddy.com/",
+    "bypassSteps": [
+      "Go directly to Renewals & Billing > Subscriptions.",
+      "Select all checkboxes next to active products.",
+      "Click 'Cancel Renewal' at the top.",
+      "Click 'Delete Product' to forfeit immediate ownership or let expire."
+    ],
+    "retentionOfferWorkaround": "GoDaddy separates 'Cancel Renewal' (lets service expire) from 'Delete My Product' (immediate shutoff). Always opt for 'Cancel Renewal' to avoid loss of domain access.",
+    "legalStatuteReference": "ICANN Transfer Policy & CARL \u00a7 17602",
+    "averageCancellationTimeMinutes": 4,
+    "phoneContactFallback": "480-505-8877"
+  },
+  {
+    "id": "hostgator",
+    "name": "HostGator",
+    "slug": "hostgator",
+    "category": "Cloud",
+    "difficultyRating": 4,
+    "darkPatternType": "phone_gate",
+    "directBypassUrl": "https://portal.hostgator.com/package/cancel",
+    "standardUrl": "https://portal.hostgator.com/",
+    "bypassSteps": [
+      "Log into HostGator Customer Portal.",
+      "Navigate to cancellation form.",
+      "Complete multi-step exit survey.",
+      "Verify cancellation ticket confirmation number."
+    ],
+    "retentionOfferWorkaround": "Often redirects customers to live chat support agents who are trained in intensive retention scripts. State 'I refuse all offers under FTC cancellation guidelines'.",
+    "legalStatuteReference": "FTC Negative Option Rule (16 CFR Part 425)",
+    "averageCancellationTimeMinutes": 8,
+    "phoneContactFallback": "866-964-2867"
+  },
+  {
+    "id": "bluehost",
+    "name": "Bluehost",
+    "slug": "bluehost",
+    "category": "Cloud",
+    "difficultyRating": 4,
+    "darkPatternType": "retention_maze",
+    "directBypassUrl": "https://my.bluehost.com/hosting/account/renewals",
+    "standardUrl": "https://my.bluehost.com/",
+    "bypassSteps": [
+      "Go to Account > Products > Renewals.",
+      "Switch billing toggle from 'Auto-Renew' to 'Manual Renew'.",
+      "Confirm disabled auto-renewal modal.",
+      "Decline upsell calls or retention chat prompts."
+    ],
+    "retentionOfferWorkaround": "Bluehost auto-renews up to 15 days PRIOR to expiration. Disable auto-renew at least 20 days early to avoid surprise charges.",
+    "legalStatuteReference": "CARL \u00a7 17600",
+    "averageCancellationTimeMinutes": 5,
+    "phoneContactFallback": "888-401-4678"
+  },
+  {
+    "id": "squarespace",
+    "name": "Squarespace",
+    "slug": "squarespace",
+    "category": "Cloud",
+    "difficultyRating": 2,
+    "darkPatternType": "hidden_button",
+    "directBypassUrl": "https://account.squarespace.com/billing",
+    "standardUrl": "https://account.squarespace.com/",
+    "bypassSteps": [
+      "Access billing settings for the specific website.",
+      "Under Subscriptions, click 'Website'.",
+      "Click 'Cancel Subscription'.",
+      "Select reason and confirm immediate deactivation or end-of-cycle."
+    ],
+    "retentionOfferWorkaround": "Domain names bought through Squarespace must be cancelled separately in the Domains tab.",
+    "legalStatuteReference": "CARL \u00a7 17602",
+    "averageCancellationTimeMinutes": 3
+  },
+  {
+    "id": "wix",
+    "name": "Wix",
+    "slug": "wix",
+    "category": "Cloud",
+    "difficultyRating": 3,
+    "darkPatternType": "retention_maze",
+    "directBypassUrl": "https://premium.wix.com/wix/api/mpCenterWeb/my-subscriptions",
+    "standardUrl": "https://www.wix.com/account/settings",
+    "bypassSteps": [
+      "Navigate directly to Premium Subscriptions overview.",
+      "Click the three dots icon next to your plan.",
+      "Select 'Cancel Plan'.",
+      "Click 'Cancel Now' past the feature retainment warning."
+    ],
+    "retentionOfferWorkaround": "Wix provides a 14-day statutory money-back guarantee for first-time premium plans. After 14 days, auto-renewal must be cancelled before the 14-day prior window.",
+    "legalStatuteReference": "CARL \u00a7 17600 & ROSCA 15 U.S.C. \u00a7 8403",
+    "averageCancellationTimeMinutes": 3
+  },
+  {
+    "id": "new-york-times",
+    "name": "The New York Times",
+    "slug": "new-york-times",
+    "category": "News Media",
+    "difficultyRating": 4,
+    "darkPatternType": "phone_gate",
+    "directBypassUrl": "https://www.nytimes.com/subscription/cancel",
+    "standardUrl": "https://www.nytimes.com/account/settings",
+    "bypassSteps": [
+      "Open NYT account subscription settings.",
+      "Click 'Cancel your subscription'.",
+      "Navigate past automated chatbot retention prompts.",
+      "If live chat initiates, type: 'Cancel subscription immediately. Decline all offers under California Law.'",
+      "Confirm termination timestamp."
+    ],
+    "retentionOfferWorkaround": "NYT gates users behind a simulated human chatbot offering $1/week deals. Type 'agent cancel immediately' to force the bypass trigger.",
+    "legalStatuteReference": "California Business and Professions Code \u00a7 17602(c)",
+    "averageCancellationTimeMinutes": 6,
+    "phoneContactFallback": "800-698-4637",
+    "faqs": [
+      {
+        "question": "Can I cancel NYT online without calling?",
+        "answer": "Yes, California and EU residency rules forced NYT to provide chat and online cancellation options for all subscribers."
+      }
+    ]
+  },
+  {
+    "id": "wall-street-journal",
+    "name": "The Wall Street Journal (Dow Jones)",
+    "slug": "wall-street-journal",
+    "category": "News Media",
+    "difficultyRating": 5,
+    "darkPatternType": "phone_gate",
+    "directBypassUrl": "https://customercenter.wsj.com/cancel",
+    "standardUrl": "https://customercenter.wsj.com/",
+    "bypassSteps": [
+      "Access Dow Jones Customer Center.",
+      "If online cancel link displays 'Call Customer Service', invoke UnTrap Legal Generator.",
+      "Call 1-800-JOURNAL or initiate live chat.",
+      "Quote CARL \u00a7 17602 and demand immediate cancellation receipt."
+    ],
+    "retentionOfferWorkaround": "WSJ frequently disables the digital cancel button based on geolocation IP checks outside California. Use our Legal Demand PDF to bypass phone agent hold times.",
+    "legalStatuteReference": "CARL \u00a7 17602 & New York Consumer Protection Laws",
+    "averageCancellationTimeMinutes": 10,
+    "phoneContactFallback": "800-568-7625"
+  },
+  {
+    "id": "washington-post",
+    "name": "The Washington Post",
+    "slug": "washington-post",
+    "category": "News Media",
+    "difficultyRating": 2,
+    "darkPatternType": "retention_maze",
+    "directBypassUrl": "https://subscribe.washingtonpost.com/profile/#/manage/subscription",
+    "standardUrl": "https://www.washingtonpost.com/subscribe/myaccount/",
+    "bypassSteps": [
+      "Log into WaPo subscription management.",
+      "Click 'Turn off auto-renew'.",
+      "Select reason in modal.",
+      "Click final confirmation button."
+    ],
+    "retentionOfferWorkaround": "WaPo attempts 1-2 retention price cuts. Decline both to preserve immediate expiration.",
+    "legalStatuteReference": "ROSCA 15 U.S.C. \u00a7 8403",
+    "averageCancellationTimeMinutes": 2
+  },
+  {
+    "id": "economist",
+    "name": "The Economist",
+    "slug": "economist",
+    "category": "News Media",
+    "difficultyRating": 4,
+    "darkPatternType": "phone_gate",
+    "directBypassUrl": "https://www.economist.com/contact-us",
+    "standardUrl": "https://www.economist.com/my-account",
+    "bypassSteps": [
+      "Access account subscription settings.",
+      "If self-service button is missing, connect to Live Chat.",
+      "Send canned demand: 'Please cancel my auto-renewing subscription effective immediately.'",
+      "Request written confirmation email."
+    ],
+    "retentionOfferWorkaround": "Live chat agents often stall with multi-year special pricing offers. Reiterate refusal.",
+    "legalStatuteReference": "FTC Negative Option Rule (16 CFR Part 425)",
+    "averageCancellationTimeMinutes": 8,
+    "phoneContactFallback": "800-456-6086"
+  },
+  {
+    "id": "bloomberg",
+    "name": "Bloomberg Digital",
+    "slug": "bloomberg",
+    "category": "News Media",
+    "difficultyRating": 3,
+    "darkPatternType": "retention_maze",
+    "directBypassUrl": "https://www.bloomberg.com/account/subscription",
+    "standardUrl": "https://www.bloomberg.com/account",
+    "bypassSteps": [
+      "Navigate directly to Bloomberg subscription management.",
+      "Click 'Cancel Subscription'.",
+      "Pass through 3 feedback survey panels.",
+      "Confirm cancellation."
+    ],
+    "retentionOfferWorkaround": "Bloomberg warns that all saved watchlists and Bloomberg Terminal integration previews will expire. Proceed through confirmation.",
+    "legalStatuteReference": "CARL \u00a7 17600",
+    "averageCancellationTimeMinutes": 3
+  },
+  {
+    "id": "financial-times",
+    "name": "Financial Times",
+    "slug": "financial-times",
+    "category": "News Media",
+    "difficultyRating": 3,
+    "darkPatternType": "delay_tactic",
+    "directBypassUrl": "https://www.ft.com/myft/alerts/subscription",
+    "standardUrl": "https://www.ft.com/myft",
+    "bypassSteps": [
+      "Sign into FT subscription settings.",
+      "Select 'Manage Subscription'.",
+      "Choose 'Cancel Auto-Renewal'.",
+      "Complete verification."
+    ],
+    "retentionOfferWorkaround": "FT enforces a 14-day notice requirement for corporate or annual plans. Serve statutory cancellation notice if within renewal window.",
+    "legalStatuteReference": "UK Consumer Rights Act & CARL \u00a7 17602",
+    "averageCancellationTimeMinutes": 4,
+    "phoneContactFallback": "800-628-8088"
+  },
+  {
+    "id": "the-athletic",
+    "name": "The Athletic",
+    "slug": "the-athletic",
+    "category": "News Media",
+    "difficultyRating": 2,
+    "darkPatternType": "retention_maze",
+    "directBypassUrl": "https://theathletic.com/settings/subscription/cancel",
+    "standardUrl": "https://theathletic.com/settings",
+    "bypassSteps": [
+      "Directly load the cancel subscription URL.",
+      "Select your sports league and primary team.",
+      "Decline the $1/month discount offer.",
+      "Click 'Complete Cancellation'."
+    ],
+    "retentionOfferWorkaround": "Owned by The New York Times, but retains a separate, faster web cancellation portal.",
+    "legalStatuteReference": "CARL \u00a7 17602",
+    "averageCancellationTimeMinutes": 2
+  },
+  {
+    "id": "medium",
+    "name": "Medium Membership",
+    "slug": "medium",
+    "category": "News Media",
+    "difficultyRating": 1,
+    "darkPatternType": "hidden_button",
+    "directBypassUrl": "https://medium.com/me/settings/membership",
+    "standardUrl": "https://medium.com/me/settings",
+    "bypassSteps": [
+      "Open Medium settings > Membership.",
+      "Click 'Cancel membership'.",
+      "Confirm cancellation modal."
+    ],
+    "retentionOfferWorkaround": "Clean interface without aggressive dark patterns.",
+    "legalStatuteReference": "CARL \u00a7 17600",
+    "averageCancellationTimeMinutes": 1
+  },
+  {
+    "id": "substack",
+    "name": "Substack Paid Publications",
+    "slug": "substack",
+    "category": "News Media",
+    "difficultyRating": 2,
+    "darkPatternType": "hidden_button",
+    "directBypassUrl": "https://substack.com/settings/subscriptions",
+    "standardUrl": "https://substack.com/settings",
+    "bypassSteps": [
+      "Go to Substack Subscriptions overview.",
+      "Locate the specific author or newsletter.",
+      "Click 'Manage' and choose 'Cancel Subscription'.",
+      "Confirm cancellation."
+    ],
+    "retentionOfferWorkaround": "Substack allows individual publication cancellation rather than a single master toggle.",
+    "legalStatuteReference": "ROSCA 15 U.S.C. \u00a7 8403",
+    "averageCancellationTimeMinutes": 1
+  },
+  {
+    "id": "wired",
+    "name": "Wired (Cond\u00e9 Nast)",
+    "slug": "wired",
+    "category": "News Media",
+    "difficultyRating": 3,
+    "darkPatternType": "retention_maze",
+    "directBypassUrl": "https://www.wired.com/user-center/subscription",
+    "standardUrl": "https://www.wired.com/user-center",
+    "bypassSteps": [
+      "Log into Cond\u00e9 Nast customer portal.",
+      "Locate Wired Subscription.",
+      "Select 'Cancel Auto-Renewal'.",
+      "Confirm through exit surveys."
+    ],
+    "retentionOfferWorkaround": "Cond\u00e9 Nast bundles digital with physical print delivery. Ensure print recurring delivery fee is explicitly marked terminated.",
+    "legalStatuteReference": "CARL \u00a7 17600 & FTC Negative Option Rules",
+    "averageCancellationTimeMinutes": 3,
+    "phoneContactFallback": "800-769-4733"
+  }
+]
