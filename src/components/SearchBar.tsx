@@ -31,6 +31,26 @@ export default function SearchBar({
   const activePlaceholder = placeholder || t('hero.searchPlaceholder');
   const services = servicesData as ServiceRecord[];
 
+const ARABIC_NAME_MAP: Record<string, string[]> = {
+  adobe: ['ادوبي', 'أدوبي', 'فوتوشوب', 'تصميم'],
+  netflix: ['نتفلكس', 'نتفليكس', 'افلام', 'مسلسلات'],
+  'amazon-prime': ['امازون', 'أمازون', 'برايم'],
+  spotify: ['سبوتيفاي', 'سبوتفاي', 'موسيقى', 'اغاني'],
+  'planet-fitness': ['بلانيت فيتنس', 'بلانيت', 'نادي', 'جيم', 'رياضة'],
+  'equinox': ['ايكوينوكس', 'نادي', 'جيم'],
+  'la-fitness': ['ال ايه فيتنس', 'نادي', 'جيم'],
+  'new-york-times': ['نيويورك تايمز', 'جريدة', 'اخبار', 'صحافة'],
+  'wall-street-journal': ['وول ستريت', 'جريدة', 'مال'],
+  'disney-plus': ['ديزني', 'ديزني بلس', 'كرتون'],
+  'youtube-premium': ['يوتيوب', 'يوتيوب بريميوم', 'فيديوهات'],
+  dropbox: ['دروب بوكس', 'دروببوكس', 'سحابة', 'تخزين'],
+  'chatgpt-plus': ['شات جي بي تي', 'شات', 'ذكاء اصطناعي'],
+  'google-one': ['جوجل', 'غوغل', 'درايف', 'تخزين سحابي'],
+  'microsoft-365': ['مايكروسوفت', 'اوفيس', 'وورد'],
+  'apple-one': ['ابل', 'أبل', 'اي كلاود'],
+};
+
+
   // Keyboard shortcut listener (Cmd+K or Ctrl+K or /)
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
@@ -56,7 +76,9 @@ export default function SearchBar({
       const categoryMatch = s.category.toLowerCase().includes(trimmed);
       const patternMatch = s.darkPatternType.replace('_', ' ').toLowerCase().includes(trimmed);
       const stepMatch = s.bypassSteps.some((step) => step.toLowerCase().includes(trimmed));
-      return nameMatch || categoryMatch || patternMatch || stepMatch;
+      const arabicAliases = ARABIC_NAME_MAP[s.slug] || [];
+      const arabicMatch = arabicAliases.some((alias) => alias.includes(trimmed) || trimmed.includes(alias));
+      return nameMatch || categoryMatch || patternMatch || stepMatch || arabicMatch;
     });
 
     results.sort((a, b) => {

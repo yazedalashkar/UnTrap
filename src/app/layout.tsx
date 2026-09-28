@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@/lib/theme';
 import FloatingNavDock from '@/components/FloatingNavDock';
 import { LanguageProvider } from '@/lib/i18n';
 import type { Metadata, Viewport } from 'next';
@@ -107,10 +108,12 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased selection:bg-red-500/20 selection:text-red-400">
-        <LanguageProvider>
-          <div className="relative flex min-h-screen flex-col pb-16 md:pb-0">{children}</div>
-          <FloatingNavDock />
-        </LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <div className="relative flex min-h-screen flex-col pb-20 md:pb-0">{children}</div>
+            <FloatingNavDock />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

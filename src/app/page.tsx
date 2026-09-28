@@ -41,8 +41,8 @@ export default function HomePage() {
       <Header />
       <main className="min-h-screen bg-background">
         {/* HERO SECTION */}
-        <section className="relative overflow-hidden border-b border-black/5 dark:border-white/10 bg-gradient-to-b from-white/90 via-background to-background dark:from-zinc-950/70 dark:via-background dark:to-background py-16 sm:py-24">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_75%_65%_at_50%_-15%,rgba(239,68,68,0.18),rgba(255,255,255,0))]" />
+        <section className="relative overflow-hidden border-b border-black/5 dark:border-white/10 bg-background py-16 sm:py-24">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-15%,rgba(239,68,68,0.15),transparent)]" />
           
           <div className="container relative mx-auto max-w-7xl px-4 sm:px-6">
             <div className="mx-auto max-w-3xl text-center space-y-6">
