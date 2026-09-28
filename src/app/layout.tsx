@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from '@/lib/theme';
 import FloatingNavDock from '@/components/FloatingNavDock';
 import { LanguageProvider } from '@/lib/i18n';
@@ -113,6 +114,7 @@ export default function RootLayout({
             <div className="relative flex min-h-screen flex-col pb-20 md:pb-0">{children}</div>
             <FloatingNavDock />
           </LanguageProvider>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
