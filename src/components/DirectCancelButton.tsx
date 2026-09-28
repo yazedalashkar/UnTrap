@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { ExternalLink, Check, Copy, Zap } from 'lucide-react';
+import { useLanguage } from '@/lib/i18n';
 
 interface DirectCancelButtonProps {
   url: string;
@@ -19,11 +20,18 @@ export default function DirectCancelButton({
   className = '',
 }: DirectCancelButtonProps) {
   const [copied, setCopied] = useState(false);
+  const { t, lang } = useLanguage();
 
   const handleBypass = async () => {
-    const stepsFormatted = `[UnTrap Bypass Guide for ${serviceName}]\nDirect Kill-Switch URL: ${url}\n\nStep-by-Step Instructions:\n${steps
+    const isArabic = lang === 'ar';
+    const header = isArabic ? `[دليل تخطي وإلغاء اشتراك ${serviceName} عبر UnTrap]` : `[UnTrap Bypass Guide for ${serviceName}]`;
+    const linkLabel = isArabic ? 'رابط الإلغاء الفوري المباشر' : 'Direct Kill-Switch URL';
+    const stepsHeading = isArabic ? 'خطوات التنفيذ المباشرة:' : 'Step-by-Step Instructions:';
+    const footer = isArabic ? 'مقدم بواسطة منصة UnTrap (https://un-trap.vercel.app)' : 'Provided by UnTrap (https://un-trap.vercel.app)';
+
+    const stepsFormatted = `${header}\n${linkLabel}: ${url}\n\n${stepsHeading}\n${steps
       .map((step, idx) => `${idx + 1}. ${step}`)
-      .join('\n')}\n\nProvided by UnTrap (https://untrap.io)`;
+      .join('\n')}\n\n${footer}`;
 
     try {
       if (typeof navigator !== 'undefined' && navigator.clipboard) {
@@ -42,12 +50,12 @@ export default function DirectCancelButton({
     return (
       <button
         onClick={handleBypass}
-        title={`Open direct bypass link and copy instructions for ${serviceName}`}
+        title={lang === 'ar' ? `فتح الرابط المباشر ونسخ الخطوات لـ ${serviceName}` : `Open direct bypass link and copy instructions for ${serviceName}`}
         className={`inline-flex items-center gap-1.5 rounded-xl bg-red-600 px-3.5 py-2 text-xs font-bold text-white shadow-sm ring-1 ring-white/20 transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-red-500 active:scale-95 ${className}`}
       >
         <Zap className="h-3.5 w-3.5 fill-current" />
-        <span>{copied ? 'Copied & Opening...' : 'Direct Bypass'}</span>
-        <ExternalLink className="h-3 w-3 opacity-80" />
+        <span>{copied ? t('card.copied') : t('card.directBypass')}</span>
+        <ExternalLink className={`h-3 w-3 opacity-80 ${lang === 'ar' ? 'rotate-180' : ''}`} />
       </button>
     );
   }
@@ -61,13 +69,13 @@ export default function DirectCancelButton({
         {copied ? (
           <>
             <Check className="h-4 w-4 text-emerald-400" />
-            <span>Bypass Instructions Copied! Opening...</span>
+            <span>{t('card.copied')}</span>
           </>
         ) : (
           <>
             <Copy className="h-4 w-4 text-red-400" />
-            <span>Copy Guide & Open Bypass Link</span>
-            <ExternalLink className="h-4 w-4 ml-1 opacity-70" />
+            <span>{t('card.copyAndOpen')}</span>
+            <ExternalLink className={`h-4 w-4 opacity-70 ${lang === 'ar' ? 'rotate-180' : ''}`} />
           </>
         )}
       </button>
@@ -83,12 +91,12 @@ export default function DirectCancelButton({
         <Zap className="h-4 w-4 fill-white text-white" />
       </div>
       <div className="flex flex-col text-left leading-tight">
-        <span>{copied ? 'Instructions Copied! Launching...' : `Execute ${serviceName} Kill-Switch`}</span>
+        <span>{copied ? t('card.copied') : `${t('card.executeKillSwitch')} ${serviceName}`}</span>
         <span className="text-[11px] font-normal text-red-100 opacity-90">
-          Copies steps to clipboard & opens unmasked portal
+          {t('card.copiesToClipboard')}
         </span>
       </div>
-      <ExternalLink className="ml-2 h-4 w-4 opacity-75 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+      <ExternalLink className={`ml-2 h-4 w-4 opacity-75 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${lang === 'ar' ? 'rotate-180 mr-2 ml-0' : ''}`} />
     </button>
   );
 }

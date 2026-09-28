@@ -1,3 +1,4 @@
+import { LanguageProvider } from '@/lib/i18n';
 import type { Metadata, Viewport } from 'next';
 import '@/styles/globals.css';
 
@@ -38,14 +39,17 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: true,
   },
-  metadataBase: new URL('https://untrap.io'),
+  metadataBase: new URL('https://un-trap.vercel.app'),
+  verification: {
+    google: 'W0ElaeZaewWwHqaRF85e_kcWcd_L7wEsuMmNEqieJ5Y',
+  },
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://untrap.io',
+    url: 'https://un-trap.vercel.app',
     title: 'UnTrap | Subscription Cancellation Bypass Engine',
     description:
       'Direct bypass links and instant kill-switches for online subscription services. Skip retention mazes and dark patterns.',
@@ -97,11 +101,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" data-theme="dark">
       <head>
+        <meta name="google-site-verification" content="W0ElaeZaewWwHqaRF85e_kcWcd_L7wEsuMmNEqieJ5Y" />
         <link rel="icon" href="/favicon.png" sizes="32x32" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased selection:bg-red-500/20 selection:text-red-400">
-        <div className="relative flex min-h-screen flex-col">{children}</div>
+        <LanguageProvider>
+          <div className="relative flex min-h-screen flex-col">{children}</div>
+        </LanguageProvider>
       </body>
     </html>
   );

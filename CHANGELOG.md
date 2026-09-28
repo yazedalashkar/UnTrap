@@ -102,3 +102,17 @@ All notable architectural and technical implementations of the UnTrap platform a
   - Configured layered `backdrop-blur-2xl` and `backdrop-blur-xl` translucent surfaces (`bg-white/70`, `dark:bg-black/65`, `dark:bg-zinc-900/50`).
   - Added ultra-thin specular hairline borders (`border-black/5 dark:border-white/10`) and ambient shadows.
   - Implemented spring physics timing function (`ease-[cubic-bezier(0.16,1,0.3,1)]`) with tactile tap/hover feedback across cards, buttons, and search results.
+
+---
+
+## [Arabic Localization & Bilingual Engine] - 2026-09-28
+
+### Internationalization & RTL Architecture
+- **`/src/lib/i18n.tsx`**:
+  - Implemented client-side `LanguageProvider` and `useLanguage` hook supporting English (`en`) and fluent Classical Arabic (`ar`).
+  - Dynamic `dir="rtl"` and `lang="ar"` switching with `localStorage` persistence.
+  - Comprehensive bilingual dictionary covering navigation, hero sections, search, categories, dark pattern types, flow comparisons, card actions, virtual card shields, and statutory legal generator fields.
+- **`LanguageToggle.tsx`**:
+  - Added an iOS-style glassmorphic language switcher to `Header.tsx` allowing one-tap switching between Arabic and English.
+- **Bilingual Statutory Notice Generator**:
+  - Enhanced `src/lib/legal-templates.ts` to output formal Arabic legal notices citing California CARL § 17600, ROSCA (15 U.S.C. § 8401), and EFTA Reg E with official legal Arabic phrasing alongside English statutory references.

@@ -13,7 +13,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://untrap.io/sitemap.xml',
-    host: 'https://untrap.io',
+    sitemap: 'https://un-trap.vercel.app/sitemap.xml',
+    host: 'https://un-trap.vercel.app',
   };
 }

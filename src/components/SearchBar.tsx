@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Search, X, ArrowRight, Zap, AlertTriangle } from 'lucide-react';
 import { ServiceRecord } from '@/lib/types';
 import servicesData from '@/data/services.json';
+import { useLanguage } from '@/lib/i18n';
 
 interface SearchBarProps {
   placeholder?: string;
@@ -14,7 +15,7 @@ interface SearchBarProps {
 }
 
 export default function SearchBar({
-  placeholder = 'Search 50+ services (e.g. Adobe, Planet Fitness, Netflix, AWS)...',
+  placeholder,
   autoFocus = false,
   onSelectService,
   className = '',
@@ -25,7 +26,9 @@ export default function SearchBar({
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const { t, lang } = useLanguage();
 
+  const activePlaceholder = placeholder || t('hero.searchPlaceholder');
   const services = servicesData as ServiceRecord[];
 
   const filteredServices = useMemo(() => {
@@ -105,13 +108,13 @@ export default function SearchBar({
     if (rating >= 4) {
       return (
         <span className="flex items-center gap-1 rounded-full bg-red-500/10 px-2 py-0.5 text-[10px] font-bold text-red-400 border border-red-500/20">
-          <AlertTriangle className="h-3 w-3" /> Trap Level {rating}/5
+          <AlertTriangle className="h-3 w-3" /> {t('card.trapLevel')} {rating}/5
         </span>
       );
     }
     return (
       <span className="flex items-center gap-1 rounded-full bg-amber-500/10 px-2 py-0.5 text-[10px] font-bold text-amber-400 border border-amber-500/20">
-        <Zap className="h-3 w-3" /> Difficulty {rating}/5
+        <Zap className="h-3 w-3" /> {t('card.trapLevel')} {rating}/5
       </span>
     );
   };
@@ -119,7 +122,7 @@ export default function SearchBar({
   return (
     <div ref={containerRef} className={`relative w-full max-w-2xl ${className}`}>
       <div className="relative flex items-center">
-        <div className="pointer-events-none absolute left-4 text-muted-foreground">
+        <div className={`pointer-events-none absolute ${lang === 'ar' ? 'right-4' : 'left-4'} text-muted-foreground`}>
           <Search className="h-5 w-5" />
         </div>
         <input
@@ -130,8 +133,10 @@ export default function SearchBar({
           onFocus={() => query.trim().length > 0 && setIsOpen(true)}
           onKeyDown={handleKeyDown}
           autoFocus={autoFocus}
-          placeholder={placeholder}
-          className="h-14 w-full rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-zinc-900/60 pl-12 pr-11 text-base text-foreground shadow-xl shadow-black/[0.03] dark:shadow-black/30 backdrop-blur-2xl transition-all duration-200 placeholder:text-muted-foreground focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-500/15"
+          placeholder={activePlaceholder}
+          className={`h-14 w-full rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-zinc-900/60 ${
+            lang === 'ar' ? 'pr-12 pl-11 text-right' : 'pl-12 pr-11 text-left'
+          } text-base text-foreground shadow-xl shadow-black/[0.03] dark:shadow-black/30 backdrop-blur-2xl transition-all duration-200 placeholder:text-muted-foreground focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-500/15`}
         />
         {query && (
           <button
@@ -140,7 +145,7 @@ export default function SearchBar({
               setIsOpen(false);
               inputRef.current?.focus();
             }}
-            className="absolute right-3.5 rounded-full p-1.5 text-muted-foreground hover:bg-black/5 dark:hover:bg-white/10 hover:text-foreground active:scale-90 transition"
+            className={`absolute ${lang === 'ar' ? 'left-3.5' : 'right-3.5'} rounded-full p-1.5 text-muted-foreground hover:bg-black/5 dark:hover:bg-white/10 hover:text-foreground active:scale-90 transition`}
             aria-label="Clear search"
           >
             <X className="h-4 w-4" />
@@ -153,8 +158,8 @@ export default function SearchBar({
           {filteredServices.length > 0 ? (
             <div className="space-y-1">
               <div className="px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground flex justify-between">
-                <span>Matching Kill-Switches</span>
-                <span>Sub-10ms Fuzzy Filter</span>
+                <span>{lang === 'ar' ? 'المطابقات الفورية' : 'Matching Kill-Switches'}</span>
+                <span>{t('hero.statFuzzy')}</span>
               </div>
               {filteredServices.map((service, index) => {
                 const isSelected = index === selectedIndex;
@@ -181,14 +186,14 @@ export default function SearchBar({
                           </span>
                         </div>
                         <p className="text-xs text-muted-foreground truncate max-w-xs sm:max-w-sm">
-                          Bypass: {service.bypassSteps[0] || 'Direct cancellation route available'}
+                          {service.bypassSteps[0] || 'Direct cancellation route available'}
                         </p>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-2">
                       {getDifficultyBadge(service.difficultyRating)}
-                      <ArrowRight className="h-4 w-4 text-muted-foreground" />
+                      <ArrowRight className={`h-4 w-4 text-muted-foreground ${lang === 'ar' ? 'rotate-180' : ''}`} />
                     </div>
                   </div>
                 );
@@ -196,9 +201,13 @@ export default function SearchBar({
             </div>
           ) : (
             <div className="p-6 text-center text-sm text-muted-foreground">
-              <p className="font-semibold text-foreground">No subscription service found matching &quot;{query}&quot;</p>
+              <p className="font-semibold text-foreground">
+                {lang === 'ar' ? `لم يتم العثور على خدمة مطابقة لـ "${query}"` : `No subscription service found matching "${query}"`}
+              </p>
               <p className="mt-1 text-xs">
-                Need a custom notice? Generate a statutory CARL cancellation notice using our Legal Demand Generator.
+                {lang === 'ar'
+                  ? 'يمكنك توليد إخطار قانوني رسمي ملزم لأي خدمة من خلال مُولّد الإخطارات القانونية.'
+                  : 'Need a custom notice? Generate a statutory CARL cancellation notice using our Legal Demand Generator.'}
               </p>
             </div>
           )}

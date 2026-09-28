@@ -3,7 +3,7 @@ import { ServiceRecord } from '@/lib/types';
 import servicesData from '@/data/services.json';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://untrap.io';
+  const baseUrl = 'https://un-trap.vercel.app';
   const services = servicesData as ServiceRecord[];
 
   const staticRoutes: MetadataRoute.Sitemap = [

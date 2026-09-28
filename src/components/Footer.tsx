@@ -1,8 +1,10 @@
+'use client';
+
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
   ShieldCheck,
-  Scale,
   Terminal,
   Github,
   Mail,
@@ -10,8 +12,11 @@ import {
   Code2,
   Sparkles,
 } from 'lucide-react';
+import { useLanguage } from '@/lib/i18n';
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="border-t border-black/5 dark:border-white/10 backdrop-blur-xl bg-white/70 dark:bg-zinc-950/70 text-card-foreground transition-colors">
       <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:py-16">
@@ -33,50 +38,48 @@ export default function Footer() {
               </span>
             </div>
             <p className="max-w-md text-sm text-muted-foreground leading-relaxed">
-              Autonomous enterprise utility neutralizing deceptive recurring subscription traps.
-              Delivering direct kill-switches, bypassing phone-gates, and arming consumers with
-              statutory legal cancellation demands under CARL § 17600 and ROSCA.
+              {t('footer.desc')}
             </p>
             <div className="flex items-center gap-2 text-xs text-muted-foreground pt-1">
               <ShieldCheck className="h-4 w-4 text-emerald-500" />
-              <span>Zero user tracking. Pure client-side PDF generation.</span>
+              <span>{t('footer.privacy')}</span>
             </div>
           </div>
 
           {/* Directory Links */}
           <div className="md:col-span-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">
-              Directory
+              {t('nav.directory')}
             </h4>
             <ul className="mt-4 space-y-2.5 text-xs text-muted-foreground">
               <li>
                 <Link href="/cancel" className="hover:text-foreground transition">
-                  Browse All 50+ Services
+                  {t('cat.all')} (50+)
                 </Link>
               </li>
               <li>
                 <Link href="/cancel?category=Streaming" className="hover:text-foreground transition">
-                  Streaming Services
+                  {t('cat.streaming')}
                 </Link>
               </li>
               <li>
                 <Link href="/cancel?category=Gyms" className="hover:text-foreground transition">
-                  Gyms & Fitness Clubs
+                  {t('cat.gyms')}
                 </Link>
               </li>
               <li>
                 <Link href="/cancel?category=SaaS" className="hover:text-foreground transition">
-                  SaaS & Software
+                  {t('cat.saas')}
                 </Link>
               </li>
               <li>
                 <Link href="/cancel?category=Cloud" className="hover:text-foreground transition">
-                  Cloud & Hosting
+                  {t('cat.cloud')}
                 </Link>
               </li>
               <li>
                 <Link href="/cancel?category=News%20Media" className="hover:text-foreground transition">
-                  News & Publishing
+                  {t('cat.newsMedia')}
                 </Link>
               </li>
             </ul>
@@ -86,17 +89,17 @@ export default function Footer() {
           <div className="md:col-span-4 space-y-4 rounded-2xl border border-black/5 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.03] p-5 backdrop-blur-lg">
             <div className="flex items-center justify-between">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-red-500/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-red-400 border border-red-500/20">
-                <Code2 className="h-3 w-3" /> Platform Architect
+                <Code2 className="h-3 w-3" /> {t('footer.architect')}
               </span>
               <span className="flex items-center gap-1 text-[11px] text-muted-foreground font-mono">
-                <Sparkles className="h-3 w-3 text-amber-400" /> Lead Engineer
+                <Sparkles className="h-3 w-3 text-amber-400" /> {t('footer.lead')}
               </span>
             </div>
 
             <div>
-              <h4 className="text-sm font-bold text-foreground">Yazed Al-Ashkar</h4>
+              <h4 className="text-sm font-bold text-foreground">{t('footer.developerName')}</h4>
               <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
-                Frontend Web Developer & AI Solutions Specialist specializing in React, Next.js, and autonomous agent architectures.
+                {t('footer.developerRole')}
               </p>
             </div>
 
@@ -117,7 +120,7 @@ export default function Footer() {
                 className="inline-flex items-center gap-1.5 rounded-xl bg-red-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-red-500 active:scale-95"
               >
                 <Mail className="h-3.5 w-3.5" />
-                <span>Contact Engineer</span>
+                <span>{t('footer.contact')}</span>
               </a>
             </div>
           </div>
@@ -125,16 +128,16 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 border-t border-black/5 dark:border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground gap-4">
-          <p>© {new Date().getFullYear()} UnTrap.io — Public Consumer Protection Utility.</p>
+          <p>{t('footer.copyright')}</p>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1">
               <Terminal className="h-3.5 w-3.5 text-red-500" />
-              <span>Vercel Edge Distributed</span>
+              <span>{t('footer.edge')}</span>
             </span>
             <span>•</span>
-            <span>Progressive Web App (PWA)</span>
+            <span>{t('footer.pwa')}</span>
             <span>•</span>
-            <span>100/100 Core Web Vitals</span>
+            <span>{t('footer.vitals')}</span>
           </div>
         </div>
       </div>

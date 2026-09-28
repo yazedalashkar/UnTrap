@@ -1,8 +1,11 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, AlertTriangle, Zap, Clock } from 'lucide-react';
 import { ServiceRecord } from '@/lib/types';
 import DirectCancelButton from '@/components/DirectCancelButton';
+import { useLanguage } from '@/lib/i18n';
 
 interface ServiceCardProps {
   service: ServiceRecord;
@@ -10,6 +13,8 @@ interface ServiceCardProps {
 }
 
 export default function ServiceCard({ service, className = '' }: ServiceCardProps) {
+  const { t, lang } = useLanguage();
+
   const getDifficultyColor = (rating: number) => {
     switch (rating) {
       case 5:
@@ -23,14 +28,20 @@ export default function ServiceCard({ service, className = '' }: ServiceCardProp
     }
   };
 
+  const getCategoryLabel = (category: string) => {
+    switch (category) {
+      case 'Streaming': return t('cat.streaming');
+      case 'Gyms': return t('cat.gyms');
+      case 'SaaS': return t('cat.saas');
+      case 'Cloud': return t('cat.cloud');
+      case 'News Media': return t('cat.newsMedia');
+      default: return category;
+    }
+  };
+
   const getPatternBadge = (type: string) => {
-    const labels: Record<string, string> = {
-      hidden_button: 'Hidden Button',
-      phone_gate: 'Phone-Gated',
-      retention_maze: 'Retention Maze',
-      delay_tactic: 'Delay Tactic',
-    };
-    return labels[type] || type;
+    const key = `pattern.${type}`;
+    return t(key) || type;
   };
 
   return (
@@ -40,7 +51,7 @@ export default function ServiceCard({ service, className = '' }: ServiceCardProp
       <div>
         <div className="flex items-center justify-between gap-2">
           <span className="rounded-lg bg-black/[0.04] dark:bg-white/[0.06] px-2.5 py-1 text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
-            {service.category}
+            {getCategoryLabel(service.category)}
           </span>
           <span
             className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-[11px] font-bold ${getDifficultyColor(
@@ -52,7 +63,7 @@ export default function ServiceCard({ service, className = '' }: ServiceCardProp
             ) : (
               <Zap className="h-3 w-3" />
             )}
-            Trap Level {service.difficultyRating}/5
+            {t('card.trapLevel')} {service.difficultyRating}/5
           </span>
         </div>
 
@@ -67,7 +78,7 @@ export default function ServiceCard({ service, className = '' }: ServiceCardProp
               {getPatternBadge(service.darkPatternType)}
             </span>
             <span className="flex items-center gap-1 text-[11px] text-muted-foreground font-mono">
-              <Clock className="h-3 w-3 text-emerald-500" /> ~{service.averageCancellationTimeMinutes}m bypass
+              <Clock className="h-3 w-3 text-emerald-500" /> ~{service.averageCancellationTimeMinutes} {t('card.bypassTime')}
             </span>
           </div>
         </div>
@@ -82,8 +93,8 @@ export default function ServiceCard({ service, className = '' }: ServiceCardProp
           href={`/cancel/${service.slug}`}
           className="inline-flex items-center gap-1 text-xs font-bold text-muted-foreground transition-colors hover:text-foreground active:scale-95"
         >
-          <span>Full Guide</span>
-          <ArrowRight className="h-3.5 w-3.5" />
+          <span>{t('card.fullGuide')}</span>
+          <ArrowRight className={`h-3.5 w-3.5 ${lang === 'ar' ? 'rotate-180' : ''}`} />
         </Link>
 
         <DirectCancelButton

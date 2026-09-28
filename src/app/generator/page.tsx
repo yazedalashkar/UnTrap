@@ -1,17 +1,16 @@
+'use client';
+
+import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import LegalDemandGenerator from '@/components/LegalDemandGenerator';
 import VirtualCardAffiliateBanner from '@/components/VirtualCardAffiliateBanner';
 import { Scale, ShieldAlert, CheckCircle } from 'lucide-react';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Client-Side Legal Cancellation Demand Generator | UnTrap',
-  description:
-    'Generate legally binding subscription cancellation demand letters invoking California CARL § 17600 and FTC negative option regulations. 100% private client-side PDF generation.',
-};
+import { useLanguage } from '@/lib/i18n';
 
 export default function GeneratorPage() {
+  const { t } = useLanguage();
+
   return (
     <>
       <Header />
@@ -20,15 +19,13 @@ export default function GeneratorPage() {
           <div className="mx-auto max-w-3xl text-center space-y-4">
             <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-amber-400 backdrop-blur-xl">
               <Scale className="h-3.5 w-3.5" />
-              Statutory Consumer Defense Engine
+              {t('generator.badge')}
             </div>
             <h1 className="text-3xl font-black tracking-tight sm:text-5xl text-foreground">
-              Legally Binding <span className="text-red-500">Cancellation Notice</span> Generator
+              {t('generator.title')}
             </h1>
             <p className="text-base text-muted-foreground sm:text-lg leading-relaxed">
-              When subscription services gate cancellations behind 45-minute phone queues,
-              hidden buttons, or deceptive retention mazes, invoke federal and California law to
-              force immediate termination and revoke payment authorization.
+              {t('generator.desc')}
             </p>
           </div>
 
@@ -49,9 +46,7 @@ export default function GeneratorPage() {
                 California CARL § 17602(c)
               </h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Requires that any consumer who enrolled in a continuous service or automatic renewal
-                online must be provided an immediate, prominent, and unobstructed online cancellation
-                mechanism. Retention phone queues are strictly non-compliant.
+                يُلزم القانون أي شركة توفر اشتراكات رقمية بتقديم زر إلغاء إلكتروني فوري وسهل دون فرض محادثات هاتفية أو استبيانات استبقاء معقدة.
               </p>
             </div>
 
@@ -63,9 +58,7 @@ export default function GeneratorPage() {
                 Federal ROSCA (15 U.S.C. § 8401)
               </h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                The Restore Online Shoppers&apos; Confidence Act makes it illegal to charge consumers
-                for goods or services sold over the internet through negative option features without
-                providing simple mechanisms for a consumer to stop recurring billing.
+                يحظر القانون الفيدرالي فرض رسوم تجديد دورية على المستهلكين دون توفير آليات واضحة وبسيطة تمكنهم من إيقاف الخصم التلقائي فوراً.
               </p>
             </div>
 
@@ -77,9 +70,7 @@ export default function GeneratorPage() {
                 EFTA Regulation E (12 CFR § 1005.10)
               </h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Empowers consumers to revoke consent for pre-authorized recurring electronic fund
-                transfers at any time. Any subsequent bank draw or credit debit executed by the merchant
-                is legally classified as an unauthorized electronic transaction.
+                يمنح المستهلك الحق القانوني في إلغاء تفويض السحب الإلكتروني من البطاقات في أي وقت، وتُعتبر أي محاولة سحب لاحقة تحويلاً غير مصرح به.
               </p>
             </div>
           </div>

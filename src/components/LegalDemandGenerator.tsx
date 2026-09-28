@@ -10,11 +10,10 @@ import {
   Scale,
   Lock,
   AlertCircle,
-  Building2,
-  Sparkles,
 } from 'lucide-react';
 import { LegalDemandData } from '@/lib/types';
 import { generateLegalDemandText } from '@/lib/legal-templates';
+import { useLanguage } from '@/lib/i18n';
 
 interface LegalDemandGeneratorProps {
   initialServiceName?: string;
@@ -25,6 +24,8 @@ export default function LegalDemandGenerator({
   initialServiceName = '',
   initialAccountIdentifier = '',
 }: LegalDemandGeneratorProps) {
+  const { t, lang } = useLanguage();
+
   const [formData, setFormData] = useState<LegalDemandData>({
     userName: '',
     userEmail: '',
@@ -40,7 +41,7 @@ export default function LegalDemandGenerator({
   const [copied, setCopied] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
 
-  const previewText = generateLegalDemandText(formData);
+  const previewText = generateLegalDemandText(formData, lang);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -78,7 +79,7 @@ export default function LegalDemandGenerator({
       doc.rect(margin, y, contentWidth, 36, 'F');
       
       doc.setFont('helvetica', 'bold');
-      doc.setFontSize(13);
+      doc.setFontSize(12);
       doc.setTextColor(255, 255, 255);
       doc.text(
         'STATUTORY NOTICE OF IMMEDIATE SUBSCRIPTION TERMINATION',
@@ -88,9 +89,8 @@ export default function LegalDemandGenerator({
 
       y += 55;
 
-      // Notice Subtitle / Regulatory Citations
       doc.setFont('helvetica', 'bold');
-      doc.setFontSize(8.5);
+      doc.setFontSize(8);
       doc.setTextColor(100, 100, 100);
       doc.text(
         'PURSUANT TO CAL. BUS. & PROF. CODE § 17600 (CARL) | 15 U.S.C. § 8401 (ROSCA) | 16 CFR PART 425',
@@ -105,7 +105,6 @@ export default function LegalDemandGenerator({
 
       y += 20;
 
-      // Metadata Block
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(9.5);
       doc.setTextColor(30, 30, 30);
@@ -237,33 +236,28 @@ export default function LegalDemandGenerator({
             <Scale className="h-5 w-5" />
           </div>
           <div>
-            <h2 className="text-xl font-bold text-foreground">Client-Side Legal Notice Generator</h2>
-            <p className="text-xs text-muted-foreground">
-              Citing CARL § 17600, 15 U.S.C. § 8401 (ROSCA), and EFTA Reg E
-            </p>
+            <h2 className="text-xl font-bold text-foreground">{t('generator.formTitle')}</h2>
+            <p className="text-xs text-muted-foreground">{t('generator.formSubtitle')}</p>
           </div>
         </div>
 
         <div className="mt-4 flex items-center gap-2 rounded-2xl bg-emerald-500/10 p-3.5 text-xs text-emerald-400 border border-emerald-500/20">
           <Lock className="h-4 w-4 shrink-0" />
-          <span>
-            <strong>100% Client-Side Privacy:</strong> Zero data transmission. All information is
-            rendered directly into a PDF in local memory.
-          </span>
+          <span>{t('generator.privacyBadge')}</span>
         </div>
 
         <form onSubmit={(e) => e.preventDefault()} className="mt-6 space-y-4">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Your Full Legal Name *
+                {t('generator.fullName')}
               </label>
               <input
                 type="text"
                 name="userName"
                 value={formData.userName}
                 onChange={handleInputChange}
-                placeholder="Jane Doe"
+                placeholder={lang === 'ar' ? 'فلان الفلاني' : 'Jane Doe'}
                 required
                 className="mt-1.5 h-11 w-full rounded-xl border border-black/10 dark:border-white/10 bg-white/50 dark:bg-zinc-950/50 backdrop-blur-md px-3.5 text-sm text-foreground focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-500/10 transition-all"
               />
@@ -271,7 +265,7 @@ export default function LegalDemandGenerator({
 
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Your Account Email *
+                {t('generator.accountEmail')}
               </label>
               <input
                 type="email"
@@ -288,14 +282,14 @@ export default function LegalDemandGenerator({
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Service / Company Name *
+                {t('generator.serviceName')}
               </label>
               <input
                 type="text"
                 name="serviceName"
                 value={formData.serviceName}
                 onChange={handleInputChange}
-                placeholder="Planet Fitness, Adobe, etc."
+                placeholder={lang === 'ar' ? 'اسم النادي أو المنصة (مثال: Adobe أو Planet Fitness)' : 'Planet Fitness, Adobe, etc.'}
                 required
                 className="mt-1.5 h-11 w-full rounded-xl border border-black/10 dark:border-white/10 bg-white/50 dark:bg-zinc-950/50 backdrop-blur-md px-3.5 text-sm text-foreground focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-500/10 transition-all"
               />
@@ -303,14 +297,14 @@ export default function LegalDemandGenerator({
 
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Account ID / Username / Member # *
+                {t('generator.accountId')}
               </label>
               <input
                 type="text"
                 name="accountIdentifier"
                 value={formData.accountIdentifier}
                 onChange={handleInputChange}
-                placeholder="Member #109284 / user_login"
+                placeholder={lang === 'ar' ? 'رقم المشترك أو اسم المستخدم' : 'Member #109284 / user_login'}
                 required
                 className="mt-1.5 h-11 w-full rounded-xl border border-black/10 dark:border-white/10 bg-white/50 dark:bg-zinc-950/50 backdrop-blur-md px-3.5 text-sm text-foreground focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-500/10 transition-all"
               />
@@ -320,7 +314,7 @@ export default function LegalDemandGenerator({
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Upcoming Projected Billing Date *
+                {t('generator.billingDate')}
               </label>
               <input
                 type="date"
@@ -334,7 +328,7 @@ export default function LegalDemandGenerator({
 
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                Last 4 Digits of Payment Card (Optional)
+                {t('generator.cardDigits')}
               </label>
               <input
                 type="text"
@@ -350,21 +344,21 @@ export default function LegalDemandGenerator({
 
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground">
-              Subscriber Mailing Address (Optional for Certified Mail)
+              {t('generator.address')}
             </label>
             <input
               type="text"
               name="userAddress"
               value={formData.userAddress}
               onChange={handleInputChange}
-              placeholder="123 Market St, Suite 400, San Francisco, CA 94105"
+              placeholder={lang === 'ar' ? 'دمشق، حمص، الرياض، أو أي عنوان بريدي رسمي' : '123 Market St, Suite 400, San Francisco, CA 94105'}
               className="mt-1.5 h-11 w-full rounded-xl border border-black/10 dark:border-white/10 bg-white/50 dark:bg-zinc-950/50 backdrop-blur-md px-3.5 text-sm text-foreground focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-500/10 transition-all"
             />
           </div>
 
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-muted-foreground">
-              Statutory Basis
+              {t('generator.basis')}
             </label>
             <select
               name="statutoryBasis"
@@ -372,15 +366,9 @@ export default function LegalDemandGenerator({
               onChange={handleInputChange}
               className="mt-1.5 h-11 w-full rounded-xl border border-black/10 dark:border-white/10 bg-white/50 dark:bg-zinc-950/50 backdrop-blur-md px-3.5 text-sm text-foreground focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-500/10 transition-all"
             >
-              <option value="COMBINED_FEDERAL_STATE">
-                Combined CARL § 17600 + ROSCA (Maximum Legal Weight)
-              </option>
-              <option value="CARL_BPC_17600">
-                California CARL § 17600 (Strict Click-to-Cancel Mandate)
-              </option>
-              <option value="ROSCA_FTC_RULE">
-                Federal ROSCA 15 U.S.C. § 8401 & FTC Negative Option
-              </option>
+              <option value="COMBINED_FEDERAL_STATE">{t('generator.basisCombined')}</option>
+              <option value="CARL_BPC_17600">{t('generator.basisCarl')}</option>
+              <option value="ROSCA_FTC_RULE">{t('generator.basisRosca')}</option>
             </select>
           </div>
 
@@ -392,7 +380,7 @@ export default function LegalDemandGenerator({
               className="flex-1 inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-red-600 to-rose-600 px-6 py-4 text-sm font-extrabold text-white shadow-lg shadow-red-500/25 ring-1 ring-white/20 transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:from-red-500 hover:to-rose-500 active:scale-95 disabled:opacity-50"
             >
               <Download className="h-4 w-4" />
-              <span>{isGenerating ? 'Rendering PDF...' : 'Download Legally Binding PDF'}</span>
+              <span>{isGenerating ? t('generator.rendering') : t('generator.downloadBtn')}</span>
             </button>
 
             <button
@@ -403,12 +391,12 @@ export default function LegalDemandGenerator({
               {copied ? (
                 <>
                   <Check className="h-4 w-4 text-emerald-400" />
-                  <span>Copied!</span>
+                  <span>{t('generator.copiedBtn')}</span>
                 </>
               ) : (
                 <>
                   <Copy className="h-4 w-4" />
-                  <span>Copy Text</span>
+                  <span>{t('generator.copyBtn')}</span>
                 </>
               )}
             </button>
@@ -422,11 +410,11 @@ export default function LegalDemandGenerator({
           <div className="flex items-center gap-2">
             <FileText className="h-4 w-4 text-red-500" />
             <h3 className="text-xs font-bold uppercase tracking-wider text-foreground">
-              Document Live Preview
+              {t('generator.previewTitle')}
             </h3>
           </div>
           <span className="rounded-full bg-black/[0.04] dark:bg-white/[0.08] px-3 py-1 text-[10px] font-bold text-muted-foreground font-mono">
-            Strict Statutory Form
+            {t('generator.previewBadge')}
           </span>
         </div>
 
@@ -436,10 +424,7 @@ export default function LegalDemandGenerator({
 
         <div className="mt-4 rounded-2xl bg-amber-500/10 p-3.5 text-xs text-amber-400 border border-amber-500/20 flex items-start gap-2.5">
           <AlertCircle className="h-4 w-4 shrink-0 mt-0.5" />
-          <p>
-            <strong>How to use:</strong> Download the PDF and attach it to your support ticket,
-            email it directly to legal/billing, or deliver via USPS Certified Mail for phone-gated gyms.
-          </p>
+          <p>{t('generator.howToUse')}</p>
         </div>
       </div>
     </div>

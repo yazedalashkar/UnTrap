@@ -46,12 +46,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     alternates: {
-      canonical: `https://untrap.io/cancel/${service.slug}`,
+      canonical: `https://un-trap.vercel.app/cancel/${service.slug}`,
     },
     openGraph: {
       title,
       description,
-      url: `https://untrap.io/cancel/${service.slug}`,
+      url: `https://un-trap.vercel.app/cancel/${service.slug}`,
       siteName: 'UnTrap',
       type: 'article',
       publishedTime: '2026-09-28T00:00:00.000Z',
@@ -99,7 +99,7 @@ export default async function ServiceCancelPage({ params }: PageProps) {
       position: idx + 1,
       name: `Step ${idx + 1}`,
       text: step,
-      url: `https://untrap.io/cancel/${service.slug}#step-${idx + 1}`,
+      url: `https://un-trap.vercel.app/cancel/${service.slug}#step-${idx + 1}`,
     })),
   };
 

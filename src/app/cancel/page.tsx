@@ -9,6 +9,7 @@ import VirtualCardAffiliateBanner from '@/components/VirtualCardAffiliateBanner'
 import { ServiceRecord, ServiceCategory } from '@/lib/types';
 import servicesData from '@/data/services.json';
 import { Filter, Zap } from 'lucide-react';
+import { useLanguage } from '@/lib/i18n';
 
 const CATEGORIES: Array<'All' | ServiceCategory> = [
   'All',
@@ -22,6 +23,7 @@ const CATEGORIES: Array<'All' | ServiceCategory> = [
 export default function DirectoryPage() {
   const [activeCategory, setActiveCategory] = useState<'All' | ServiceCategory>('All');
   const [minDifficulty, setMinDifficulty] = useState<number>(1);
+  const { t } = useLanguage();
 
   const services = servicesData as ServiceRecord[];
 
@@ -33,6 +35,17 @@ export default function DirectoryPage() {
     });
   }, [services, activeCategory, minDifficulty]);
 
+  const getCategoryLabel = (cat: 'All' | ServiceCategory) => {
+    switch (cat) {
+      case 'All': return t('cat.all');
+      case 'Streaming': return t('cat.streaming');
+      case 'Gyms': return t('cat.gyms');
+      case 'SaaS': return t('cat.saas');
+      case 'Cloud': return t('cat.cloud');
+      case 'News Media': return t('cat.newsMedia');
+    }
+  };
+
   return (
     <>
       <Header />
@@ -41,19 +54,18 @@ export default function DirectoryPage() {
           <div className="mx-auto max-w-3xl text-center space-y-4">
             <div className="inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-red-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-red-400 backdrop-blur-xl">
               <Zap className="h-3.5 w-3.5 fill-current" />
-              Verified Kill-Switch Directory
+              {t('directory.badge')}
             </div>
             <h1 className="text-3xl font-black tracking-tight sm:text-5xl text-foreground">
-              Direct Subscription <span className="text-red-500">Bypass Links</span>
+              {t('directory.title')}
             </h1>
             <p className="text-base text-muted-foreground sm:text-lg leading-relaxed">
-              Bypass 45-minute customer support hold lines, hidden cancel links, and multi-tier
-              retention mazes. Direct unmasked URLs and step-by-step kill switches for 50 enterprise platforms.
+              {t('directory.desc')}
             </p>
           </div>
 
           <div className="mt-8 flex justify-center">
-            <SearchBar placeholder="Quick search any service (e.g. Netflix, Planet Fitness, Adobe)..." />
+            <SearchBar />
           </div>
 
           <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-b border-black/5 dark:border-white/10 pb-6">
@@ -68,14 +80,14 @@ export default function DirectoryPage() {
                       : 'border border-black/5 dark:border-white/10 backdrop-blur-xl bg-white/60 dark:bg-zinc-900/40 text-muted-foreground hover:bg-black/5 dark:hover:bg-white/10 hover:text-foreground'
                   }`}
                 >
-                  {cat}
+                  {getCategoryLabel(cat)}
                 </button>
               ))}
             </div>
 
             <div className="flex items-center gap-2 text-xs">
               <span className="font-bold text-muted-foreground flex items-center gap-1 font-mono">
-                <Filter className="h-3.5 w-3.5" /> Minimum Trap Level:
+                <Filter className="h-3.5 w-3.5" /> {t('directory.minLevel')}
               </span>
               <div className="flex rounded-xl border border-black/5 dark:border-white/10 backdrop-blur-xl bg-white/60 dark:bg-zinc-900/40 p-0.5">
                 {[1, 2, 3, 4, 5].map((lvl) => (
@@ -97,10 +109,10 @@ export default function DirectoryPage() {
 
           <div className="mt-6 flex items-center justify-between text-xs text-muted-foreground font-mono">
             <span>
-              Showing <strong>{filteredServices.length}</strong> verified cancellation bypasses
+              {t('directory.showing')} <strong>{filteredServices.length}</strong> {t('directory.verifiedCount')}
             </span>
             <span className="hidden sm:inline">
-              Continuously audited for counter-retention bypasses
+              {t('directory.audited')}
             </span>
           </div>
 
