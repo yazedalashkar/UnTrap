@@ -2,89 +2,165 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #fbfbfd;
-  --foreground: #1d1d1f;
-  --card: #ffffff;
-  --card-foreground: #1d1d1f;
-  --popover: #ffffff;
-  --popover-foreground: #1d1d1f;
-  --primary: #dc2626;
-  --primary-foreground: #ffffff;
-  --primary-hover: #b91c1c;
-  --secondary: #f5f5f7;
-  --secondary-foreground: #1d1d1f;
-  --muted: #f5f5f7;
-  --muted-foreground: #86868b;
-  --accent: #fef2f2;
-  --accent-foreground: #991b1b;
-  --destructive: #ef4444;
-  --destructive-foreground: #fafafa;
-  --warning: #f59e0b;
-  --warning-foreground: #ffffff;
-  --success: #10b981;
-  --success-foreground: #ffffff;
-  --border: rgba(0, 0, 0, 0.08);
-  --input: rgba(0, 0, 0, 0.08);
-  --ring: #dc2626;
-  --radius: 1rem;
-}
-
-[data-theme="dark"],
-.dark {
-  --background: #000000;
-  --foreground: #f5f5f7;
-  --card: #121215;
-  --card-foreground: #f5f5f7;
-  --popover: #121215;
-  --popover-foreground: #f5f5f7;
-  --primary: #ef4444;
-  --primary-foreground: #000000;
-  --primary-hover: #f87171;
-  --secondary: #16161a;
-  --secondary-foreground: #f5f5f7;
-  --muted: #16161a;
-  --muted-foreground: #86868b;
-  --accent: #2c1517;
-  --accent-foreground: #fca5a5;
-  --destructive: #7f1d1d;
-  --destructive-foreground: #fafafa;
-  --warning: #d97706;
-  --warning-foreground: #ffffff;
-  --success: #059669;
-  --success-foreground: #ffffff;
-  --border: rgba(255, 255, 255, 0.1);
-  --input: rgba(255, 255, 255, 0.12);
-  --ring: #ef4444;
-}
-
 @layer base {
+  :root {
+    --background: 240 10% 98%;
+    --foreground: 240 10% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 4%;
+    --primary: 0 84% 60%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 5% 94%;
+    --secondary-foreground: 240 6% 10%;
+    --muted: 240 5% 94%;
+    --muted-foreground: 240 4% 46%;
+    --accent: 240 5% 94%;
+    --accent-foreground: 240 6% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 0 84% 60%;
+    --radius: 1.25rem;
+
+    --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-elastic: cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .dark {
+    --background: 240 10% 3.5%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 5%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 5%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 84% 60%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4% 12%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 240 4% 12%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 14%;
+    --input: 240 4% 14%;
+    --ring: 0 84% 60%;
+  }
+
   * {
     @apply border-border;
+    -webkit-tap-highlight-color: transparent;
   }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Cairo', 'Tajawal', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  html[dir="rtl"] {
+    font-family: 'Cairo', 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
   body {
-    @apply bg-background text-foreground antialiased selection:bg-red-500/20 selection:text-red-400;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @apply bg-background text-foreground;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    overflow-x: hidden;
   }
 }
 
-/* iOS Glassmorphic & Micro-interaction utilities */
-@layer components {
-  .glass-header {
-    @apply sticky top-0 z-50 w-full backdrop-blur-2xl bg-white/70 dark:bg-black/60 border-b border-black/5 dark:border-white/10 transition-colors duration-300;
+/* iOS & HyperOS Spring and Glassmorphism Utilities */
+@layer utilities {
+  .ios-glass {
+    backdrop-filter: blur(28px) saturate(190%);
+    -webkit-backdrop-filter: blur(28px) saturate(190%);
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05), inset 0 1px 1px 0 rgba(255, 255, 255, 0.6);
   }
-  .glass-card {
-    @apply backdrop-blur-xl bg-white/75 dark:bg-zinc-900/60 border border-black/5 dark:border-white/10 shadow-lg shadow-black/[0.03] dark:shadow-black/20 transition-all duration-300 ease-spring;
+
+  .dark .ios-glass {
+    background: rgba(18, 18, 22, 0.68);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.5), inset 0 1px 1px 0 rgba(255, 255, 255, 0.12);
   }
-  .glass-card-hover {
-    @apply hover:-translate-y-1 hover:border-red-500/30 hover:shadow-xl hover:shadow-red-500/5 active:scale-[0.99];
+
+  .ios-glass-subtle {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(0, 0, 0, 0.04);
   }
-  .glass-panel {
-    @apply backdrop-blur-2xl bg-white/80 dark:bg-zinc-950/70 border border-black/5 dark:border-white/10 shadow-2xl;
+
+  .dark .ios-glass-subtle {
+    background: rgba(26, 26, 32, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
   }
-  .hairline-specular {
-    @apply ring-1 ring-inset ring-white/20 dark:ring-white/10;
+
+  .ios-tap {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
+
+  .ios-tap:active {
+    transform: scale(0.96);
+  }
+
+  .ios-card {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .ios-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .ios-card:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Animations */
+@keyframes floatSubtle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-float-subtle {
+  animation: floatSubtle 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
 }

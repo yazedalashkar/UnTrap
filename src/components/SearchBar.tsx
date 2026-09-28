@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { Search, X, ArrowRight, Zap, AlertTriangle } from 'lucide-react';
+import { Search, X, ArrowRight, Zap, AlertTriangle, Command } from 'lucide-react';
 import { ServiceRecord } from '@/lib/types';
 import servicesData from '@/data/services.json';
 import { useLanguage } from '@/lib/i18n';
@@ -30,6 +30,21 @@ export default function SearchBar({
 
   const activePlaceholder = placeholder || t('hero.searchPlaceholder');
   const services = servicesData as ServiceRecord[];
+
+  // Keyboard shortcut listener (Cmd+K or Ctrl+K or /)
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        inputRef.current?.focus();
+      } else if (e.key === '/' && document.activeElement?.tagName !== 'INPUT' && document.activeElement?.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        inputRef.current?.focus();
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const filteredServices = useMemo(() => {
     const trimmed = query.trim().toLowerCase();
@@ -121,8 +136,8 @@ export default function SearchBar({
 
   return (
     <div ref={containerRef} className={`relative w-full max-w-2xl ${className}`}>
-      <div className="relative flex items-center">
-        <div className={`pointer-events-none absolute ${lang === 'ar' ? 'right-4' : 'left-4'} text-muted-foreground`}>
+      <div className="group relative flex items-center">
+        <div className={`pointer-events-none absolute ${lang === 'ar' ? 'right-4' : 'left-4'} text-muted-foreground transition-colors group-focus-within:text-red-500`}>
           <Search className="h-5 w-5" />
         </div>
         <input
@@ -135,26 +150,35 @@ export default function SearchBar({
           autoFocus={autoFocus}
           placeholder={activePlaceholder}
           className={`h-14 w-full rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-zinc-900/60 ${
-            lang === 'ar' ? 'pr-12 pl-11 text-right' : 'pl-12 pr-11 text-left'
-          } text-base text-foreground shadow-xl shadow-black/[0.03] dark:shadow-black/30 backdrop-blur-2xl transition-all duration-200 placeholder:text-muted-foreground focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-500/15`}
+            lang === 'ar' ? 'pr-12 pl-24 text-right' : 'pl-12 pr-24 text-left'
+          } text-base text-foreground shadow-xl shadow-black/[0.03] dark:shadow-black/30 backdrop-blur-2xl transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] placeholder:text-muted-foreground focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-500/15 focus:shadow-2xl focus:shadow-red-500/10`}
         />
-        {query && (
-          <button
-            onClick={() => {
-              setQuery('');
-              setIsOpen(false);
-              inputRef.current?.focus();
-            }}
-            className={`absolute ${lang === 'ar' ? 'left-3.5' : 'right-3.5'} rounded-full p-1.5 text-muted-foreground hover:bg-black/5 dark:hover:bg-white/10 hover:text-foreground active:scale-90 transition`}
-            aria-label="Clear search"
-          >
-            <X className="h-4 w-4" />
-          </button>
-        )}
+
+        {/* Keyboard shortcut badge & Clear button */}
+        <div className={`absolute ${lang === 'ar' ? 'left-3' : 'right-3'} flex items-center gap-1.5`}>
+          {query ? (
+            <button
+              onClick={() => {
+                setQuery('');
+                setIsOpen(false);
+                inputRef.current?.focus();
+              }}
+              className="rounded-full p-1.5 text-muted-foreground hover:bg-black/5 dark:hover:bg-white/10 hover:text-foreground active:scale-90 transition-transform"
+              aria-label="Clear search"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          ) : (
+            <kbd className="hidden sm:inline-flex items-center gap-0.5 rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.04] dark:bg-white/[0.06] px-2 py-1 text-[10px] font-mono text-muted-foreground shadow-sm">
+              <Command className="h-3 w-3" />
+              <span>K</span>
+            </kbd>
+          )}
+        </div>
       </div>
 
       {isOpen && (
-        <div className="absolute top-full z-50 mt-2.5 w-full overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-white/80 dark:bg-zinc-950/85 p-2 shadow-2xl backdrop-blur-2xl animate-fade-in">
+        <div className="absolute top-full z-50 mt-2.5 w-full overflow-hidden rounded-3xl border border-black/10 dark:border-white/15 bg-white/85 dark:bg-zinc-950/90 p-2.5 shadow-2xl backdrop-blur-3xl ring-1 ring-black/5 dark:ring-white/10 animate-fade-in">
           {filteredServices.length > 0 ? (
             <div className="space-y-1">
               <div className="px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground flex justify-between">
@@ -168,14 +192,14 @@ export default function SearchBar({
                     key={service.id}
                     onClick={() => handleSelect(service)}
                     onMouseEnter={() => setSelectedIndex(index)}
-                    className={`flex cursor-pointer items-center justify-between rounded-xl px-3.5 py-2.5 transition-all duration-150 ${
+                    className={`flex cursor-pointer items-center justify-between rounded-2xl px-3.5 py-3 transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-[0.98] ${
                       isSelected
-                        ? 'bg-red-500/10 text-foreground border border-red-500/30'
+                        ? 'bg-red-500/10 text-foreground border border-red-500/30 shadow-sm'
                         : 'hover:bg-black/5 dark:hover:bg-white/5 text-muted-foreground'
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-black/[0.04] dark:bg-white/[0.08] text-xs font-black text-foreground">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-black/[0.04] to-black/[0.08] dark:from-white/[0.06] dark:to-white/[0.12] text-xs font-black text-foreground shadow-inner">
                         {service.name.charAt(0)}
                       </div>
                       <div>
@@ -185,7 +209,7 @@ export default function SearchBar({
                             {service.category}
                           </span>
                         </div>
-                        <p className="text-xs text-muted-foreground truncate max-w-xs sm:max-w-sm">
+                        <p className="text-xs text-muted-foreground truncate max-w-xs sm:max-w-sm mt-0.5">
                           {service.bypassSteps[0] || 'Direct cancellation route available'}
                         </p>
                       </div>

@@ -18,7 +18,7 @@ export default function ServiceCard({ service, className = '' }: ServiceCardProp
   const getDifficultyColor = (rating: number) => {
     switch (rating) {
       case 5:
-        return 'text-red-400 bg-red-500/10 border-red-500/30';
+        return 'text-red-400 bg-red-500/10 border-red-500/30 shadow-sm shadow-red-500/10';
       case 4:
         return 'text-orange-400 bg-orange-500/10 border-orange-500/30';
       case 3:
@@ -46,15 +46,15 @@ export default function ServiceCard({ service, className = '' }: ServiceCardProp
 
   return (
     <div
-      className={`group flex flex-col justify-between rounded-3xl backdrop-blur-xl bg-white/70 dark:bg-zinc-900/50 border border-black/5 dark:border-white/10 p-6 shadow-lg shadow-black/[0.02] dark:shadow-black/25 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-red-500/40 hover:shadow-xl hover:shadow-red-500/10 ${className}`}
+      className={`group relative flex flex-col justify-between overflow-hidden rounded-3xl backdrop-blur-2xl bg-white/70 dark:bg-zinc-900/50 border border-black/5 dark:border-white/10 p-6 sm:p-7 shadow-lg shadow-black/[0.02] dark:shadow-black/25 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-red-500/40 hover:shadow-2xl hover:shadow-red-500/15 active:scale-[0.98] before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent ${className}`}
     >
       <div>
         <div className="flex items-center justify-between gap-2">
-          <span className="rounded-lg bg-black/[0.04] dark:bg-white/[0.06] px-2.5 py-1 text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
+          <span className="rounded-xl bg-black/[0.04] dark:bg-white/[0.06] px-3 py-1 text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
             {getCategoryLabel(service.category)}
           </span>
           <span
-            className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-[11px] font-bold ${getDifficultyColor(
+            className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[11px] font-bold ${getDifficultyColor(
               service.difficultyRating
             )}`}
           >
@@ -68,16 +68,20 @@ export default function ServiceCard({ service, className = '' }: ServiceCardProp
         </div>
 
         <div className="mt-4">
-          <Link href={`/cancel/${service.slug}`}>
-            <h3 className="text-xl font-bold tracking-tight text-foreground transition-colors group-hover:text-red-500">
+          <Link href={`/cancel/${service.slug}`} className="block">
+            <h3 className="text-xl font-bold tracking-tight text-foreground transition-colors duration-200 group-hover:text-red-500">
               {service.name}
             </h3>
           </Link>
-          <div className="mt-1.5 flex items-center gap-2">
-            <span className="rounded-md bg-secondary/80 px-2 py-0.5 text-[10px] font-mono text-muted-foreground">
+          <div className="mt-2 flex flex-wrap items-center gap-2">
+            <span className="rounded-lg bg-secondary/80 px-2 py-0.5 text-[10px] font-mono text-muted-foreground">
               {getPatternBadge(service.darkPatternType)}
             </span>
-            <span className="flex items-center gap-1 text-[11px] text-muted-foreground font-mono">
+            <span className="flex items-center gap-1.5 text-[11px] text-muted-foreground font-mono">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
               <Clock className="h-3 w-3 text-emerald-500" /> ~{service.averageCancellationTimeMinutes} {t('card.bypassTime')}
             </span>
           </div>
@@ -91,10 +95,10 @@ export default function ServiceCard({ service, className = '' }: ServiceCardProp
       <div className="mt-6 border-t border-black/5 dark:border-white/10 pt-4 flex items-center justify-between gap-2">
         <Link
           href={`/cancel/${service.slug}`}
-          className="inline-flex items-center gap-1 text-xs font-bold text-muted-foreground transition-colors hover:text-foreground active:scale-95"
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-muted-foreground transition-all duration-200 hover:text-foreground active:scale-95"
         >
           <span>{t('card.fullGuide')}</span>
-          <ArrowRight className={`h-3.5 w-3.5 ${lang === 'ar' ? 'rotate-180' : ''}`} />
+          <ArrowRight className={`h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1 ${lang === 'ar' ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
         </Link>
 
         <DirectCancelButton
